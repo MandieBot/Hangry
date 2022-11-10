@@ -1,3 +1,10 @@
+.carousel-item {
+  width: 50%;
+  height: 550px;
+}
+.carousel-caption {
+  font-size: 14px;
+}
 * {
   margin: 0;
   padding: 0;
