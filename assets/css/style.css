@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap");
+
 .carousel-item {
   width: 50%;
   height: 550px;
@@ -9,6 +11,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "M PLUS Rounded 1c", Arial, Helvetica, sans-serif;
 }
 
 .website-logo {
@@ -18,8 +21,18 @@
 
 #hangry-button {
   margin: 15px;
-  height: 40px;
-  width: 95px;
+  height: 45px;
+  width: 120px;
+  background-color: #f59f00;
+  color: #fff;
+  border: none;
+  border-radius: 1.2rem;
+  cursor: pointer;
+  font-size: 120%;
+}
+
+#hangry-button:hover {
+  background-color: #fcc419;
 }
 
 .ul-formatting {
@@ -32,7 +45,6 @@ body {
   background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(217, 158, 48, 1) 100%);
   min-height: 100vh;
 }
-
 
 aside {
   background-color: beige;
