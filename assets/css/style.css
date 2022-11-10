@@ -1,5 +1,36 @@
+.carousel-item {
+  width: 50%;
+  height: 550px;
+}
+.carousel-caption {
+  font-size: 14px;
+}
 * {
-  background-color: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.website-logo {
+  height: 100px;
+  margin: 10px 10px 10px 20px;
+}
+
+#hangry-button {
+  margin: 15px;
+  height: 40px;
+  width: 95px;
+}
+
+.ul-formatting {
+  list-style: none;
+  display: contents;
+}
+
+body {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(217, 158, 48, 1) 100%);
+  min-height: 100vh;
 }
 
 
