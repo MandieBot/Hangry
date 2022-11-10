@@ -1,3 +1,7 @@
-* {
-  background-color: #f59f00;
+.carousel-item {
+  width: 50%;
+  height: 550px;
+}
+.carousel-caption {
+  font-size: 14px;
 }
