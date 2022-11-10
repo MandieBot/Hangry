@@ -15,11 +15,15 @@
   </head>
   <body>
     <header>
-      <nav>
+      <!-- Used bootstrap class for Nav bar layout -->
+      <nav class="navbar bg-light">
         <!-- //This is our logo - to the left inside of the navbar - should be clickable to direct to the Home Page -->
-        <img src="" alt="" />
+        <!-- Added home page link to the logo image. Also added formatting to the logo in css -->
+        <a href="./index.html"> <img src="./assets/images/finLogo.png" alt="hamburger" id="website-logo" class="website-logo" /></a>
+        <h2>Hangry<small class="text-muted"> With faded secondary text</small></h2>
+
         <!-- //Randomize recipes - to the right inside of the navbar -->
-        <button>Hangry</button>
+        <button id="hangry-button">Feed Me</button>
       </nav>
     </header>
     <main>
@@ -50,26 +54,39 @@
         <button>Load More Results</button>
       </section>
     </main>
-    <footer>
-      <!-- //Clickable logo that directs you back to the home page (absolute positioning) -->
-      <img src="" alt" />
-      <div>
-        <h4>API Links</h4>
-        <ul>
-          <li></li>
-          <li></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contributors</h4>
-        <ul>
-          <!-- //Github links -->
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
+    <!-- Added background color to footer -->
+    <footer class="bg-secondary">
+      <div class="container col-xxl-8 col-md-12">
+        <div class="row py-5">
+          <!-- //Clickable logo that directs you back to the home page (absolute positioning) -->
+          <div class="col-6 col-md-4 col-lg-4">
+            <!-- Added clickable feature to logo -->
+            <a href="#website-logo"> <img src="./assets/images/finLogo.png" alt="hamburger" class="website-logo" /></a>
+          </div>
+          <div class="col-6 col-md-4 col-lg-4">
+            <!-- Added text color to title -->
+            <h4 class="text-light">API Links</h4>
+            <!-- Added API links for each API and changed text color to light -->
+            <ul class="ul-formatting">
+              <a href="https://www.google.com/" target="_blank" class="text-light text-decoration-none"> <li>Recipe Search API Link</li></a>
+              <a href="https://www.google.com/" target="_blank" class="text-light text-decoration-none"> <li>Nutrition Analysis API Link</li></a>
+            </ul>
+          </div>
+          <div class="col-6 col-md-4 col-lg-4">
+            <!-- Added text color to title -->
+            <h4 class="text-light">Contributors</h4>
+            <!-- Added ul formatting in css -->
+            <ul class="ul-formatting">
+              <!-- //Github links -->
+              <!-- Added Github links for each memeber and changed text color to light -->
+              <a href="https://github.com/T3mpz" target="_blank" class="text-light text-decoration-none"> <li>Christian Bega</li></a>
+              <a href="https://github.com/edyta0106" target="_blank" class="text-light text-decoration-none"> <li>Edyta Radomska</li></a>
+              <a href="https://github.com/MandieBot" target="_blank" class="text-light text-decoration-none"> <li>Mandie Botinelly</li></a>
+              <a href="https://github.com/mo-aden" target="_blank" class="text-light text-decoration-none"> <li>Mohamed Aden</li></a>
+              <a href="https://github.com/NicoletteBoggs" target="_blank" class="text-light text-decoration-none"> <li>Nicolette Boggs</li></a>
+            </ul>
+          </div>
+        </div>
       </div>
     </footer>
     <script
