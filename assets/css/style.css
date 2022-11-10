@@ -1,3 +1,52 @@
 * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  overflow-x: hidden;
+}
+
+.header-section {
+  height: 8vh;
+  background-color: #a5d8ff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header-section nav {
+  padding: 1.2rem 2.4rem;
+}
+
+.logo {
+  display: inline-block;
+  max-width: 4.8rem;
+  height: 4.8rem;
+}
+
+.randomCta-Btn {
   background-color: #f59f00;
+  color: #fff;
+  font-size: 1.8rem;
+  padding: 1.1rem 2.4rem;
+  border: none;
+  border-radius: 1.2rem;
+  cursor: pointer;
+}
+
+.randomCta-Btn:hover {
+  background-color: #fcc419;
+}
+
+/* Carousel section  */
+.carousel-container {
+  padding: 4.8rem 9.6rem;
+  text-align: center;
 }
