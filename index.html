@@ -94,8 +94,48 @@
       <section class="card-sections">
       <div class="container m-5 m-auto" style="min-height: 50rem">
       <div class="row selection-container" id="userSelectedCriteria">
-        <div class="col-lg-2 bg-white border border-danger" style="min-height: 10rem">Search Criteria</div>
-        <div class="col-lg-10 bg-white d-flex flex-wrap justify-content-center align-content-center border border-danger" style="min-height: 50rem">
+        <div class="col-lg-2 bg-white d-flex justify-content-center" style="min-height: 10rem">
+          <aside class="w-100 my-4 px-3">
+          <p class="mt-3 fs-4 text-center fw-bold">Search Criteria</p>
+
+                    <!-- Diet -->
+          <p class="mt-5 fw-bold">Diet Filters</p>
+          <div class="form-check">
+            <ul class="ul-formatting">
+              <li><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+            <label class="form-check-label" for="flexCheckDefault">Vegetarian</label></li>
+              <li><input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+              <label class="form-check-label" for="flexCheckChecked">Vegan</label></li>
+              <li><input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+              <label class="form-check-label" for="flexCheckChecked">Keto</label></li>
+              <li><input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+              <label class="form-check-label" for="flexCheckChecked">Paleo</label></li>
+              <li><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+              <label class="form-check-label" for="flexCheckDefault">Low-Carb</label></li>
+            </ul>
+          </div>
+
+                 <!-- Allergies -->
+        <p class="mt-5 fw-bold">Food Allergies</p>
+          <div class="form-check">
+            <ul class="ul-formatting">
+              <li><input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+             <label class="form-check-label" for="flexCheckChecked">Shellfish</label></li>
+              <li><input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+             <label class="form-check-label" for="flexCheckChecked">Gluten</label></li>
+              <li><input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+             <label class="form-check-label" for="flexCheckChecked">Nuts</label></li>
+              <li><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+             <label class="form-check-label" for="flexCheckDefault">Lactose</label></li>
+              <li><input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+             <label class="form-check-label" for="flexCheckChecked">Soy</label></li>
+             </ul>
+                </div>
+          <div class="d-flex justify-content-center"><button class="btn mt-5 custom-btn">Apply Filters</button></div>
+  </aside>
+    </div>
+
+        <div class="col-lg-10 bg-white d-flex flex-wrap justify-content-center align-content-center" style="min-height: 50rem">
           <!-- Card -->
           <div class="card my-3 mx-2" style="width: 17rem; height: 20rem">
             <img src="..." class="card-img-top" alt="..." />
@@ -120,15 +160,6 @@
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary custom-btn">Feed Me!</a>
-            </div>
-          </div>
-          <!-- Card -->
-          <div class="card my-3 mx-2" style="width: 17rem; height: 20rem">
-            <img src="..." class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               <a href="#" class="btn custom-btn">Feed Me!</a>
             </div>
           </div>
@@ -150,102 +181,24 @@
               <a href="#" class="btn custom-btn">Feed Me!</a>
             </div>
           </div>
+          <!-- Card -->
+          <div class="card my-3 mx-2" style="width: 17rem; height: 20rem">
+            <img src="..." class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn custom-btn">Feed Me!</a>
+            </div>
+          </div>
+          <div class="d-flex mt-3 justify-content-center"><button class="btn custom-btn">Load More Results</button></div>
         </div>
-      </div>
+    </div>
 
 
       </section>
 
             <!-- //Going to include diet, nutritional info, and allergy filters - on the left side of the search results -->
             
-         <section>
-              <!-- Filtered sidebar -->
-          <div class="container" id="aside">
-            
-        <span class="border">
-              <aside>
-            
-                    <!-- Diet -->
-              Diet Filters
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                <label class="form-check-label" for="flexCheckDefault">Vegetarian</label>
-               </div>
-            
-              <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                  <label class="form-check-label" for="flexCheckChecked">Vegan</label>
-              </div>
-            
-              <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                  <label class="form-check-label" for="flexCheckChecked">Keto</label>
-              </div>
-            
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                <label class="form-check-label" for="flexCheckChecked">Paleo</label>
-              </div>
-            
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                <label class="form-check-label" for="flexCheckDefault">Low-Carb</label>
-              </div>
-            
-                    <br>
-            
-                    <!-- Allergies -->
-            
-                    Food Allergies
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                      <label class="form-check-label" for="flexCheckChecked">Shellfish</label>
-                    </div>
-            
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                      <label class="form-check-label" for="flexCheckChecked">Gluten</label>
-                    </div>
-            
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                      <label class="form-check-label" for="flexCheckChecked">Nuts</label>
-                    </div>
-            
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                      <label class="form-check-label" for="flexCheckDefault">Lactose</label>
-                    </div>
-            
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                      <label class="form-check-label" for="flexCheckChecked">Soy</label>
-                    </div>
-            
-                    <br>
-            
-                    <button>Apply Filters</button>
-            
-              </div>
-              </div>
-              </aside>
-            </section>
-
-
-
-      <section>
-        <h2>Search Results</h2>
-        <div class="cardContainer">
-          <!-- //A card for each li. List will be in rows - each row will have 3 cards up to 2 rows (flexbox?) -->
-          <div class="card"></div>
-          <div class="card"></div>
-          <div class="card"></div>
-          <div class="card"></div>
-          <div class="card"></div>
-          <div class="card"></div>
-        </div>
-        <button>Load More Results</button>
-      </section>
     </main>
     <!-- Added background color to footer -->
     <footer class="bg-secondary">
