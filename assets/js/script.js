@@ -8,10 +8,12 @@ const carousel = new bootstrap.Carousel(myCarouselElement, {
 // var baseUrl = "https://api.edamam.com/" + "app_id=" + apiID + "&" + "app_key=" + "$" + apiKey;
 // var baseUrl = "https://api.edamam.com/";
 var baseUrl = "https://api.edamam.com/api/recipes/v2?type=public&";
+
 // console.log(baseUrl);
+var nutrientsUrl = "https://api.edamam.com/api/nutrition-details";
 
 // Created an undefined variable to store the newBaseUrl (newBaseUrl === baseUrl + query (q) + ApiID + ApiKey)
-var newBaseUrl;
+var newBaseUrl, newNutrientsUrl;
 
 // Created a variable to store a reference to the userSearchInput
 
@@ -51,10 +53,17 @@ function concatUrl(query) {
   // Created two variables to store the apiID and apiKey
   var apiID = "8b44c5a3";
   var apiKey = "5aa1bbf6b8a35fe5f1a87ae1f373c84d";
+  var nutrientsApiID = "81660670";
+  var nutrientsApiKey = "bf3c626930152d5249b50c2db0532e9b";
 
   // Create the concatUrl code to concatenate all passed parameters
   // Reassigned the newBaseUrl variable to store the value of the newly created newBaseUrl
-  newBaseUrl = baseUrl + "q=" + query + "&" + "app_id=" + apiID + "&" + "app_key=" + apiKey;
+  newBaseUrl = baseUrl + "q=" + query + "&app_id=" + apiID + "&app_key=" + apiKey;
+  newNutrientsUrl = nutrientsUrl + "q=" + query + "&app_id" + nutrientsApiID + "&app_key=" + nutrientsApiKey;
+  console.log(newNutrientsUrl);
+  console.log(newBaseUrl);
+  // https://api.edamam.com/api/nutrition-details?app_id=81660670&app_key=bf3c626930152d5249b50c2db0532e9b
+
   // https://api.edamam.com/api/recipes/v2?type=public&q=salad&app_id=8b44c5a3&app_key=5aa1bbf6b8a35fe5f1a87ae1f373c84d
 
   // Still need to figure out which functions to call NEXT
@@ -69,7 +78,6 @@ function concatUrl(query) {
 
 // // Created a recipeSearchApi function that will be responsible for fetching api data
 function recipeSearchGetApi(newBaseUrl) {
-  // ajax () -
   $.ajax({
     url: newBaseUrl,
     method: "GET",
