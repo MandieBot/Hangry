@@ -1,11 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap");
 
-.carousel-item {
-  width: 50%;
-  height: 550px;
+.custom-img-sizing {
+  width: 100%;
+  object-fit: cover;
+  height: 40rem;
 }
-.carousel-caption {
-  font-size: 14px;
+.custom-input {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
 }
 * {
   margin: 0;
@@ -15,8 +20,8 @@
 }
 
 .website-logo {
-  height: 100px;
-  margin: 10px 10px 10px 20px;
+  height: 120px;
+  /* margin: 10px 10px 10px 20px; */
 }
 
 #hangry-button {
