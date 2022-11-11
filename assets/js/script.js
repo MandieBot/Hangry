@@ -21,7 +21,7 @@ var newBaseUrl, newNutrientsUrl;
 // Created a event listener to listen for user event
 $('#search-button').on('click', function () {
   var searchParameter = $('#userSearchInput').val();
-  console.log('test');
+  // console.log(searchParameter);
   concatUrl(searchParameter);
 });
 
@@ -32,21 +32,21 @@ $('#hangry-button').on('click', function () {
   // console.log('test');
   let randomSearchParameter = randomRecipe();
 
+  //6 different outputs
+
+  //Random food that will be generated
+  console.log(randomSearchParameter);
   concatUrl(randomSearchParameter);
 });
 
 // Created a randomRecipe function that will be responsible for randomly choosing a recipe
 function randomRecipe() {
-  // Create the randomRecipe code to randomly choose a recipe
+  //Arr to generate random Recipes, we'll need more to get at least 6 inputs displayed on the cards.
+  const randomRecipeArr = ['pasta', 'cheese', 'sushi', 'chicken'];
 
-  const randomRecipe = ['pasta', 'cheese', 'sushi', 'chicken'];
+  const random = Math.floor(Math.random() * randomRecipeArr.length);
 
-  // const randomGen = (min, max) => {
-  //   return Math.floor(Math.random() * (max - min + 1)) + min;
-  // };
-
-  const random = Math.floor(Math.random * randomRecipe.length);
-  return randomRecipe[random];
+  return randomRecipeArr[random];
   // console.log(randomRecipe[random]);
   // displayResults();
 }
@@ -78,8 +78,8 @@ function concatUrl(query) {
   newBaseUrl = baseUrl + 'q=' + query + '&' + 'app_id=' + apiID + '&' + 'app_key=' + apiKey;
   newBaseUrl = baseUrl + 'q=' + query + '&app_id=' + apiID + '&app_key=' + apiKey;
   newNutrientsUrl = nutrientsUrl + 'q=' + query + '&app_id' + nutrientsApiID + '&app_key=' + nutrientsApiKey;
-  console.log(newNutrientsUrl);
-  console.log(newBaseUrl);
+  // console.log(newNutrientsUrl);
+  // console.log(newBaseUrl);
   // https://api.edamam.com/api/nutrition-details?app_id=81660670&app_key=bf3c626930152d5249b50c2db0532e9b
 
   // https://api.edamam.com/api/recipes/v2?type=public&q=salad&app_id=8b44c5a3&app_key=5aa1bbf6b8a35fe5f1a87ae1f373c84d
