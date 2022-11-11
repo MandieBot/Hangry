@@ -16,15 +16,16 @@ var newBaseUrl;
 // Created a variable to store a reference to the userSearchInput
 
 // Created a event listener to listen for user event
-$("#searchBtn").on("click", function () {
+$("#search-button").on("click", function () {
   var searchParameter = $("#userSearchInput").val();
+  console.log("test");
   concatUrl(searchParameter);
 });
 
 // Created an event listener to listen for click events on random Recipe
 // Using jquery to target any elements with a class of #randomBtn
 //             .on () - event listener
-$("#hangryBtn").on("click", function () {
+$("#hangry-button").on("click", function () {
   console.log("test");
   randomRecipe();
 });
@@ -43,7 +44,7 @@ function selectedCriteria() {
   // If the criteria option is unchecked (false) DON'T RUN CODE
 
   // Pass the selectedCriteria to concatUrl function
-  concatURl();
+  concatUrl();
 }
 // Created a concatUrl function that will be responsible for concatenating the : baseUrl, query (q), ApiID, ApiKey, and other selectedCriteria parameters
 function concatUrl(query) {
@@ -74,7 +75,6 @@ function recipeSearchGetApi(newBaseUrl) {
     method: "GET",
   }).then(function (response) {
     // Just creating references to store each key we want to use
-
     var hits = response.hits;
     var cardElements = [];
     for (let i = 0; i < 1; i++) {
@@ -83,7 +83,8 @@ function recipeSearchGetApi(newBaseUrl) {
       cardElements.push(element.recipe.dishType);
       cardElements.push(element.recipe.label);
       cardElements.push(element.recipe.images.REGULAR.url);
-      console.log(cardElements);
+      cardElements.push(element.recipe.ingredientLines);
+      // console.log(cardElements);
       // // Response object AKA hit
       // console.log(element.recipe);
       // // Cuisine Type
