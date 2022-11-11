@@ -136,3 +136,9 @@ function recipeSearchGetApi(newBaseUrl) {
 
 // // RESOURCES ::
 // // ajax () - https://api.jquery.com/jquery.ajax/
+
+
+
+
+
+
