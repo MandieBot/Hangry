@@ -42,12 +42,20 @@ function randomRecipe() {
 // parameters to pass - userSearchInput and selectedCriteria
 function selectedCriteria() {
   // Iterate over each criteria option
+  $(".form-check")
+    .children(".form-check-input")
+    .each(function (e) {});
+
   // If the criteria option is checked (true) then run this code > collect each selectedCriteria
   // If the criteria option is unchecked (false) DON'T RUN CODE
 
   // Pass the selectedCriteria to concatUrl function
   concatUrl();
 }
+$("#apply-button").on("click", function () {
+  console.log("test");
+});
+
 // Created a concatUrl function that will be responsible for concatenating the : baseUrl, query (q), ApiID, ApiKey, and other selectedCriteria parameters
 function concatUrl(query) {
   // Created two variables to store the apiID and apiKey
