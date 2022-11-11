@@ -1,3 +1,9 @@
+const myCarouselElement = document.querySelector("#myCarousel");
+const carousel = new bootstrap.Carousel(myCarouselElement, {
+  interval: 1000,
+  wrap: true,
+});
+
 // Created a variable to store that value of the baseUrl used in the api
 // var baseUrl = "https://api.edamam.com/" + "app_id=" + apiID + "&" + "app_key=" + "$" + apiKey;
 // var baseUrl = "https://api.edamam.com/";
