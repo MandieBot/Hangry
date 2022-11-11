@@ -1,4 +1,4 @@
-const myCarouselElement = document.querySelector("#myCarousel");
+const myCarouselElement = document.querySelector('#myCarousel');
 const carousel = new bootstrap.Carousel(myCarouselElement, {
   interval: 1000,
   wrap: true,
@@ -7,7 +7,7 @@ const carousel = new bootstrap.Carousel(myCarouselElement, {
 // Created a variable to store that value of the baseUrl used in the api
 // var baseUrl = "https://api.edamam.com/" + "app_id=" + apiID + "&" + "app_key=" + "$" + apiKey;
 // var baseUrl = "https://api.edamam.com/";
-var baseUrl = "https://api.edamam.com/api/recipes/v2?type=public&";
+var baseUrl = 'https://api.edamam.com/api/recipes/v2?type=public&';
 // console.log(baseUrl);
 
 // Created an undefined variable to store the newBaseUrl (newBaseUrl === baseUrl + query (q) + ApiID + ApiKey)
@@ -16,25 +16,39 @@ var newBaseUrl;
 // Created a variable to store a reference to the userSearchInput
 
 // Created a event listener to listen for user event
-$("#search-button").on("click", function () {
-  var searchParameter = $("#userSearchInput").val();
-  console.log("test");
+$('#search-button').on('click', function () {
+  var searchParameter = $('#userSearchInput').val();
+  console.log('test');
   concatUrl(searchParameter);
 });
 
 // Created an event listener to listen for click events on random Recipe
 // Using jquery to target any elements with a class of #randomBtn
 //             .on () - event listener
-$("#hangry-button").on("click", function () {
-  console.log("test");
-  randomRecipe();
+$('#hangry-button').on('click', function () {
+  // console.log('test');
+  let randomSearchParameter = randomRecipe();
+
+  concatUrl(randomSearchParameter);
 });
 
 // Created a randomRecipe function that will be responsible for randomly choosing a recipe
 function randomRecipe() {
   // Create the randomRecipe code to randomly choose a recipe
-  displayResults();
+
+  const randomRecipe = ['pasta', 'cheese', 'sushi', 'chicken'];
+
+  // const randomGen = (min, max) => {
+  //   return Math.floor(Math.random() * (max - min + 1)) + min;
+  // };
+
+  const random = Math.floor(Math.random * randomRecipe.length);
+  return randomRecipe[random];
+  // console.log(randomRecipe[random]);
+  // displayResults();
 }
+
+// randomRecipe();
 
 // Created a selectedCriteria function that will be responsible for collecting the selected user criteria
 // parameters to pass - userSearchInput and selectedCriteria
@@ -49,12 +63,12 @@ function selectedCriteria() {
 // Created a concatUrl function that will be responsible for concatenating the : baseUrl, query (q), ApiID, ApiKey, and other selectedCriteria parameters
 function concatUrl(query) {
   // Created two variables to store the apiID and apiKey
-  var apiID = "8b44c5a3";
-  var apiKey = "5aa1bbf6b8a35fe5f1a87ae1f373c84d";
+  var apiID = '8b44c5a3';
+  var apiKey = '5aa1bbf6b8a35fe5f1a87ae1f373c84d';
 
   // Create the concatUrl code to concatenate all passed parameters
   // Reassigned the newBaseUrl variable to store the value of the newly created newBaseUrl
-  newBaseUrl = baseUrl + "q=" + query + "&" + "app_id=" + apiID + "&" + "app_key=" + apiKey;
+  newBaseUrl = baseUrl + 'q=' + query + '&' + 'app_id=' + apiID + '&' + 'app_key=' + apiKey;
   // https://api.edamam.com/api/recipes/v2?type=public&q=salad&app_id=8b44c5a3&app_key=5aa1bbf6b8a35fe5f1a87ae1f373c84d
 
   // Still need to figure out which functions to call NEXT
@@ -72,11 +86,12 @@ function recipeSearchGetApi(newBaseUrl) {
   // ajax () -
   $.ajax({
     url: newBaseUrl,
-    method: "GET",
+    method: 'GET',
   }).then(function (response) {
     // Just creating references to store each key we want to use
     var hits = response.hits;
     var cardElements = [];
+
     for (let i = 0; i < 1; i++) {
       const element = hits[i];
       cardElements.push(element.recipe.cuisineType);
@@ -84,7 +99,7 @@ function recipeSearchGetApi(newBaseUrl) {
       cardElements.push(element.recipe.label);
       cardElements.push(element.recipe.images.REGULAR.url);
       cardElements.push(element.recipe.ingredientLines);
-      // console.log(cardElements);
+      console.log(cardElements);
       // // Response object AKA hit
       // console.log(element.recipe);
       // // Cuisine Type
