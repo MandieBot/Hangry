@@ -1,4 +1,4 @@
-const myCarouselElement = document.querySelector('#myCarousel');
+const myCarouselElement = document.querySelector("#myCarousel");
 const carousel = new bootstrap.Carousel(myCarouselElement, {
   interval: 1000,
   wrap: true,
@@ -7,11 +7,11 @@ const carousel = new bootstrap.Carousel(myCarouselElement, {
 // Created a variable to store that value of the baseUrl used in the api
 // var baseUrl = "https://api.edamam.com/" + "app_id=" + apiID + "&" + "app_key=" + "$" + apiKey;
 // var baseUrl = "https://api.edamam.com/";
-var baseUrl = 'https://api.edamam.com/api/recipes/v2?type=public&';
-var baseUrl = 'https://api.edamam.com/api/recipes/v2?type=public&';
+var baseUrl = "https://api.edamam.com/api/recipes/v2?type=public&";
+var baseUrl = "https://api.edamam.com/api/recipes/v2?type=public&";
 
 // console.log(baseUrl);
-var nutrientsUrl = 'https://api.edamam.com/api/nutrition-details';
+var nutrientsUrl = "https://api.edamam.com/api/nutrition-details";
 
 // Created an undefined variable to store the newBaseUrl (newBaseUrl === baseUrl + query (q) + ApiID + ApiKey)
 var newBaseUrl, newNutrientsUrl;
@@ -19,8 +19,8 @@ var newBaseUrl, newNutrientsUrl;
 // Created a variable to store a reference to the userSearchInput
 
 // Created a event listener to listen for user event
-$('#search-button').on('click', function () {
-  var searchParameter = $('#userSearchInput').val();
+$("#search-button").on("click", function () {
+  var searchParameter = $("#userSearchInput").val();
   // console.log(searchParameter);
   concatUrl(searchParameter);
 });
@@ -28,7 +28,7 @@ $('#search-button').on('click', function () {
 // Created an event listener to listen for click events on random Recipe
 // Using jquery to target any elements with a class of #randomBtn
 //             .on () - event listener
-$('#hangry-button').on('click', function () {
+$("#hangry-button").on("click", function () {
   // console.log('test');
   let randomSearchParameter = randomRecipe();
 
@@ -42,7 +42,7 @@ $('#hangry-button').on('click', function () {
 // Created a randomRecipe function that will be responsible for randomly choosing a recipe
 function randomRecipe() {
   //Arr to generate random Recipes, we'll need more to get at least 6 inputs displayed on the cards.
-  const randomRecipeArr = ['pasta', 'cheese', 'sushi', 'chicken'];
+  const randomRecipeArr = ["pasta", "cheese", "sushi", "chicken"];
 
   const random = Math.floor(Math.random() * randomRecipeArr.length);
 
@@ -60,35 +60,35 @@ function selectedCriteria() {
   var selectedValues = [];
   var selectedDietValues = [];
 
-  $('input.health:checked').each(function () {
+  $("input.health:checked").each(function () {
     selectedValues.push(this.value);
   });
-  $('input.diet:checked').each(function () {
+  $("input.diet:checked").each(function () {
     selectedDietValues.push(this.value);
   });
 
   // Pass the selectedCriteria to concatUrl function
   concatUrl(undefined, selectedValues, selectedDietValues);
 }
-$('#apply-button').on('click', function () {
+$("#apply-button").on("click", function () {
   selectedCriteria();
 });
 
 // Created a concatUrl function that will be responsible for concatenating the : baseUrl, query (q), ApiID, ApiKey, and other selectedCriteria parameters
 function concatUrl(query, healthLabels, dietLabels) {
   // Created two variables to store the apiID and apiKey
-  var apiID = '8b44c5a3';
-  var apiKey = '5aa1bbf6b8a35fe5f1a87ae1f373c84d';
-  var apiID = '8b44c5a3';
-  var apiKey = '5aa1bbf6b8a35fe5f1a87ae1f373c84d';
-  var nutrientsApiID = '81660670';
-  var nutrientsApiKey = 'bf3c626930152d5249b50c2db0532e9b';
+  var apiID = "8b44c5a3";
+  var apiKey = "5aa1bbf6b8a35fe5f1a87ae1f373c84d";
+  var apiID = "8b44c5a3";
+  var apiKey = "5aa1bbf6b8a35fe5f1a87ae1f373c84d";
+  var nutrientsApiID = "81660670";
+  var nutrientsApiKey = "bf3c626930152d5249b50c2db0532e9b";
 
   // Create the concatUrl code to concatenate all passed parameters
   // Reassigned the newBaseUrl variable to store the value of the newly created newBaseUrl
 
-  newBaseUrl = baseUrl + 'q=' + query + '&app_id=' + apiID + '&app_key=' + apiKey;
-  newNutrientsUrl = nutrientsUrl + 'q=' + query + '&app_id=' + nutrientsApiID + '&app_key=' + nutrientsApiKey;
+  newBaseUrl = baseUrl + "q=" + query + "&app_id=" + apiID + "&app_key=" + apiKey;
+  newNutrientsUrl = nutrientsUrl + "q=" + query + "&app_id=" + nutrientsApiID + "&app_key=" + nutrientsApiKey;
 
   if (healthLabels) {
     healthLabels.map(function (label) {
@@ -102,9 +102,9 @@ function concatUrl(query, healthLabels, dietLabels) {
   }
   console.log(newNutrientsUrl);
   console.log(newBaseUrl);
-  newBaseUrl = baseUrl + 'q=' + query + '&' + 'app_id=' + apiID + '&' + 'app_key=' + apiKey;
-  newBaseUrl = baseUrl + 'q=' + query + '&app_id=' + apiID + '&app_key=' + apiKey;
-  newNutrientsUrl = nutrientsUrl + 'q=' + query + '&app_id' + nutrientsApiID + '&app_key=' + nutrientsApiKey;
+  newBaseUrl = baseUrl + "q=" + query + "&" + "app_id=" + apiID + "&" + "app_key=" + apiKey;
+  newBaseUrl = baseUrl + "q=" + query + "&app_id=" + apiID + "&app_key=" + apiKey;
+  newNutrientsUrl = nutrientsUrl + "q=" + query + "&app_id" + nutrientsApiID + "&app_key=" + nutrientsApiKey;
   // console.log(newNutrientsUrl);
   // console.log(newBaseUrl);
 
@@ -126,7 +126,7 @@ function concatUrl(query, healthLabels, dietLabels) {
 function recipeSearchGetApi(newBaseUrl) {
   $.ajax({
     url: newBaseUrl,
-    method: 'GET',
+    method: "GET",
   }).then(function (response) {
     // Just creating references to store each key we want to use
     var hits = response.hits;
