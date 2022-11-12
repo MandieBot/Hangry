@@ -55,16 +55,27 @@ function randomRecipe() {
 
 // Created a selectedCriteria function that will be responsible for collecting the selected user criteria
 // parameters to pass - userSearchInput and selectedCriteria
+
 function selectedCriteria() {
-  // Iterate over each criteria option
-  // If the criteria option is checked (true) then run this code > collect each selectedCriteria
-  // If the criteria option is unchecked (false) DON'T RUN CODE
+  var selectedValues = [];
+  var selectedDietValues = [];
+
+  $("input.health:checked").each(function () {
+    selectedValues.push(this.value);
+  });
+  $("input.diet:checked").each(function () {
+    selectedDietValues.push(this.value);
+  });
 
   // Pass the selectedCriteria to concatUrl function
-  concatUrl();
+  concatUrl(undefined, selectedValues, selectedDietValues);
 }
+$("#apply-button").on("click", function () {
+  selectedCriteria();
+});
+
 // Created a concatUrl function that will be responsible for concatenating the : baseUrl, query (q), ApiID, ApiKey, and other selectedCriteria parameters
-function concatUrl(query) {
+function concatUrl(query, healthLabels, dietLabels) {
   // Created two variables to store the apiID and apiKey
   var apiID = '8b44c5a3';
   var apiKey = '5aa1bbf6b8a35fe5f1a87ae1f373c84d';
@@ -75,11 +86,29 @@ function concatUrl(query) {
 
   // Create the concatUrl code to concatenate all passed parameters
   // Reassigned the newBaseUrl variable to store the value of the newly created newBaseUrl
+<<<<<<< HEAD
+  newBaseUrl = baseUrl + "q=" + query + "&app_id=" + apiID + "&app_key=" + apiKey;
+  newNutrientsUrl = nutrientsUrl + "q=" + query + "&app_id=" + nutrientsApiID + "&app_key=" + nutrientsApiKey;
+
+  if (healthLabels) {
+    healthLabels.map(function (label) {
+      newBaseUrl = `${newBaseUrl}&health=${label}`;
+    });
+  }
+  if (dietLabels) {
+    dietLabels.map(function (label) {
+      newBaseUrl = `${newBaseUrl}&diet=${label}`;
+    });
+  }
+  console.log(newNutrientsUrl);
+  console.log(newBaseUrl);
+=======
   newBaseUrl = baseUrl + 'q=' + query + '&' + 'app_id=' + apiID + '&' + 'app_key=' + apiKey;
   newBaseUrl = baseUrl + 'q=' + query + '&app_id=' + apiID + '&app_key=' + apiKey;
   newNutrientsUrl = nutrientsUrl + 'q=' + query + '&app_id' + nutrientsApiID + '&app_key=' + nutrientsApiKey;
   // console.log(newNutrientsUrl);
   // console.log(newBaseUrl);
+>>>>>>> main
   // https://api.edamam.com/api/nutrition-details?app_id=81660670&app_key=bf3c626930152d5249b50c2db0532e9b
 
   // https://api.edamam.com/api/recipes/v2?type=public&q=salad&app_id=8b44c5a3&app_key=5aa1bbf6b8a35fe5f1a87ae1f373c84d
