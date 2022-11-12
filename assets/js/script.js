@@ -101,9 +101,7 @@ function concatUrl(query, healthLabels, dietLabels) {
   }
   console.log(newNutrientsUrl);
   console.log(newBaseUrl);
-  newBaseUrl = baseUrl + "q=" + query + "&" + "app_id=" + apiID + "&" + "app_key=" + apiKey;
-  newBaseUrl = baseUrl + "q=" + query + "&app_id=" + apiID + "&app_key=" + apiKey;
-  newNutrientsUrl = nutrientsUrl + "q=" + query + "&app_id" + nutrientsApiID + "&app_key=" + nutrientsApiKey;
+
   // console.log(newNutrientsUrl);
   // console.log(newBaseUrl);
 
@@ -190,9 +188,3 @@ function recipeSearchGetApi(newBaseUrl) {
 
 // // RESOURCES ::
 // // ajax () - https://api.jquery.com/jquery.ajax/
-
-
-
-
-
-
