@@ -60,17 +60,17 @@ function selectedCriteria() {
   var selectedValues = [];
   var selectedDietValues = [];
 
-  $("input.health:checked").each(function () {
+  $('input.health:checked').each(function () {
     selectedValues.push(this.value);
   });
-  $("input.diet:checked").each(function () {
+  $('input.diet:checked').each(function () {
     selectedDietValues.push(this.value);
   });
 
   // Pass the selectedCriteria to concatUrl function
   concatUrl(undefined, selectedValues, selectedDietValues);
 }
-$("#apply-button").on("click", function () {
+$('#apply-button').on('click', function () {
   selectedCriteria();
 });
 
@@ -86,9 +86,9 @@ function concatUrl(query, healthLabels, dietLabels) {
 
   // Create the concatUrl code to concatenate all passed parameters
   // Reassigned the newBaseUrl variable to store the value of the newly created newBaseUrl
-<<<<<<< HEAD
-  newBaseUrl = baseUrl + "q=" + query + "&app_id=" + apiID + "&app_key=" + apiKey;
-  newNutrientsUrl = nutrientsUrl + "q=" + query + "&app_id=" + nutrientsApiID + "&app_key=" + nutrientsApiKey;
+
+  newBaseUrl = baseUrl + 'q=' + query + '&app_id=' + apiID + '&app_key=' + apiKey;
+  newNutrientsUrl = nutrientsUrl + 'q=' + query + '&app_id=' + nutrientsApiID + '&app_key=' + nutrientsApiKey;
 
   if (healthLabels) {
     healthLabels.map(function (label) {
@@ -102,13 +102,12 @@ function concatUrl(query, healthLabels, dietLabels) {
   }
   console.log(newNutrientsUrl);
   console.log(newBaseUrl);
-=======
   newBaseUrl = baseUrl + 'q=' + query + '&' + 'app_id=' + apiID + '&' + 'app_key=' + apiKey;
   newBaseUrl = baseUrl + 'q=' + query + '&app_id=' + apiID + '&app_key=' + apiKey;
   newNutrientsUrl = nutrientsUrl + 'q=' + query + '&app_id' + nutrientsApiID + '&app_key=' + nutrientsApiKey;
   // console.log(newNutrientsUrl);
   // console.log(newBaseUrl);
->>>>>>> main
+
   // https://api.edamam.com/api/nutrition-details?app_id=81660670&app_key=bf3c626930152d5249b50c2db0532e9b
 
   // https://api.edamam.com/api/recipes/v2?type=public&q=salad&app_id=8b44c5a3&app_key=5aa1bbf6b8a35fe5f1a87ae1f373c84d
