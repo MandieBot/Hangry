@@ -86,7 +86,6 @@ function concatUrl(query, healthLabels, dietLabels) {
 
   // Create the concatUrl code to concatenate all passed parameters
   // Reassigned the newBaseUrl variable to store the value of the newly created newBaseUrl
-
   newBaseUrl = baseUrl + "q=" + query + "&app_id=" + apiID + "&app_key=" + apiKey;
   newNutrientsUrl = nutrientsUrl + "q=" + query + "&app_id=" + nutrientsApiID + "&app_key=" + nutrientsApiKey;
 
