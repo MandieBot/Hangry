@@ -65,74 +65,92 @@ function concatUrl(query, healthLabels, dietLabels) {
 
   // Create the concatUrl code to concatenate all passed parameters
   // Reassigned the newBaseUrl variable to store the value of the newly created newBaseUrl
-  // newBaseUrl = `${baseUrl}q=${query}&app_id=${apiID}&app_key=${apiKey}`;
-  newNutrientsUrl = `${nutrientsUrl}q=${healthLabels}&app_id=${nutrientsApiID}&app_key${nutrientsApiKey}`;
+  newBaseUrl = `${baseUrl}q=${query}&app_id=${apiID}&app_key=${apiKey}`;
+  // newNutrientsUrl = `${nutrientsUrl}q=${healthLabels}&app_id=${nutrientsApiID}&app_key${nutrientsApiKey}`;
 
-  if (healthLabels) {
-    healthLabels.map(function (label) {
-      newBaseUrl = `${newBaseUrl}&health=${label}`;
-    });
-  }
-  if (dietLabels) {
-    dietLabels.map(function (label) {
-      newBaseUrl = `${newBaseUrl}&diet=${label}`;
-    });
-  }
-  // recipeSearchGetApi(newBaseUrl);
-  nutritionGetApi(newNutrientsUrl);
+  // if (healthLabels) {
+  //   healthLabels.map(function (label) {
+  //     newBaseUrl = `${newBaseUrl}&health=${label}`;
+  //   });
+  // }
+  // if (dietLabels) {
+  //   dietLabels.map(function (label) {
+  //     newBaseUrl = `${newBaseUrl}&diet=${label}`;
+  //   });
+  // }
+  recipeSearchGetApi(newBaseUrl);
+  // nutritionGetApi(newNutrientsUrl);
 }
 
 // Created a recipeSearchApi function that will be responsible for fetching api data
-// function recipeSearchGetApi(newBaseUrl) {
-//   $.ajax({
-//     url: newBaseUrl,
-//     method: "GET",
-//   }).then(function (response) {
-//     $(response.hits).each(function (index, recipe) {
-//       let dataFromResponse = [];
-//       let storeForLater = [];
-
-//       let title = recipe.recipe.label;
-//       let image = recipe.recipe.images.REGULAR.url;
-//       let cuisine = recipe.recipe.cuisineType[0];
-//       let dishType = recipe.recipe.dishType[0];
-//       let ingredients = recipe.recipe.ingredients;
-//       let ingredientsLine = recipe.recipe.ingredientLines[0];
-//       dataFromResponse.push(title, image, cuisine, ingredients);
-//       storeForLater.push(ingredientsLine);
-//       displayResults(dataFromResponse);
-//     });
-//   });
-// }
-// Calling the recipeSearchGetApi function
-
-// Created a nutritionApi function that will be responsible for fetching api data
-function nutritionGetApi() {
-  // BaseUrl for recipe search API
-
+function recipeSearchGetApi(newBaseUrl) {
   $.ajax({
-    url: newNutrientsUrl,
+    url: newBaseUrl,
     method: "GET",
+    dataType: "json",
   }).then(function (response) {
-    console.log(response.hits);
+    let dataFromResponse = [];
+
+    //              var count = user input count
+    for (let i = 0; i < 6; i++) {
+      const element = response.hits[i];
+      let title = element.recipe.label;
+      let image = element.recipe.images.REGULAR.url;
+      let cuisine = element.recipe.cuisineType[0];
+      let dishType = element.recipe.dishType[0];
+      ingredients = element.recipe.ingredients;
+      // let ingredientsLine = element.recipe.ingredientLines[0];
+      // console.log(ingredientLine);
+      dataFromResponse.push(title, image, cuisine, dishType);
+    }
+    var card1 = dataFromResponse.splice(0, 4);
+    var card2 = dataFromResponse.splice(0, 4);
+    var card3 = dataFromResponse.splice(0, 4);
+    var card4 = dataFromResponse.splice(0, 4);
+    var card5 = dataFromResponse.splice(0, 4);
+    var card6 = dataFromResponse.splice(0, 4);
+
+    // storeForLater.push(ingredientsLine);
+    displayResults(card1, card2, card3, card4, card5, card6);
   });
 }
-// 
-// Calling the nutritionGetApi function
-nutritionGetApi();
+// Calling the recipeSearchGetApi function
+
+// // Created a nutritionApi function that will be responsible for fetching api data
+// function nutritionGetApi() {
+//   // BaseUrl for recipe search API
+
+//   $.ajax({
+//     url: newNutrientsUrl,
+//     method: "GET",
+//   }).then(function (response) {
+//     console.log(response.hits);
+//   });
+// }
+
+// // Calling the nutritionGetApi function
+// nutritionGetApi();
 
 // Created a displayResults function that will be responsible for displayingResults
-function displayResults(cardElements) {
-  console.log(cardElements);
-  // 1. I have Api data I want to display
-  // 2. The Api Data has been .push to an new array  (cardElements parameter is that array)
-  // 4. cardElements returns 20 objects containing a : title, img, cuisine, and ingredients
+function displayResults(c1, c2, c3, c4, c5, c6) {
+  console.log(c1, c2, c3, c4, c5, c6);
+  console.log(c1[0]);
+
+  // 1. Grab reference to element
+  // 2. Update that reference
+  // 3. Append
+
   // 5. I want to take those 4 items and display each item on a card
   // a. add each title to a card,
   // b. add each img to a card,
   // c. add each cuisine type to a card
   // d. add each ingredient to the card, but only on hover
   // 6. I only want to display 6 items until a user clicks the more btn
+
+  $(".card").each(function (index, card) {
+    // card[0].text(c1[0]);
+  });
+  // add data
 }
 
 // RESOURCES ::
