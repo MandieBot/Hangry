@@ -8,10 +8,6 @@ const carousel = new bootstrap.Carousel(myCarouselElement, {
 // var baseUrl = "https://api.edamam.com/" + "app_id=" + apiID + "&" + "app_key=" + "$" + apiKey;
 // var baseUrl = "https://api.edamam.com/";
 var baseUrl = "https://api.edamam.com/api/recipes/v2?type=public&";
-<<<<<<< HEAD
-=======
-var baseUrl = "https://api.edamam.com/api/recipes/v2?type=public&";
->>>>>>> main
 
 // console.log(baseUrl);
 var nutrientsUrl = "https://api.edamam.com/api/nutrition-details";
@@ -82,11 +78,6 @@ function concatUrl(query, healthLabels, dietLabels) {
   // Created two variables to store the apiID and apiKey
   var apiID = "8b44c5a3";
   var apiKey = "5aa1bbf6b8a35fe5f1a87ae1f373c84d";
-<<<<<<< HEAD
-=======
-  var apiID = "8b44c5a3";
-  var apiKey = "5aa1bbf6b8a35fe5f1a87ae1f373c84d";
->>>>>>> main
   var nutrientsApiID = "81660670";
   var nutrientsApiKey = "bf3c626930152d5249b50c2db0532e9b";
 
@@ -107,13 +98,6 @@ function concatUrl(query, healthLabels, dietLabels) {
   }
   console.log(newNutrientsUrl);
   console.log(newBaseUrl);
-<<<<<<< HEAD
-=======
-
-  // console.log(newNutrientsUrl);
-  // console.log(newBaseUrl);
-
->>>>>>> main
   // https://api.edamam.com/api/nutrition-details?app_id=81660670&app_key=bf3c626930152d5249b50c2db0532e9b
 
   // https://api.edamam.com/api/recipes/v2?type=public&q=salad&app_id=8b44c5a3&app_key=5aa1bbf6b8a35fe5f1a87ae1f373c84d
