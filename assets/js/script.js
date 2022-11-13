@@ -30,28 +30,20 @@ $("#search-button").on("click", function () {
 //             .on () - event listener
 $("#hangry-button").on("click", function () {
   // console.log('test');
-  let randomSearchParameter = randomRecipe();
+  // let randomSearchParameter = randomRecipe();
+
+  const randomRecipeArr = ["pasta", "cheese", "sushi", "chicken", "pizza", "hot dogs", "hamburger"];
+
+  for (let i = 0; i < randomRecipeArr.length; i++) {
+    concatUrl(randomRecipeArr[i]);
+  }
 
   //6 different outputs
 
   //Random food that will be generated
-  console.log(randomSearchParameter);
-  concatUrl(randomSearchParameter);
+  // console.log(randomSearchParameter);
+  // concatUrl(randomSearchParameter);
 });
-
-// Created a randomRecipe function that will be responsible for randomly choosing a recipe
-function randomRecipe() {
-  //Arr to generate random Recipes, we'll need more to get at least 6 inputs displayed on the cards.
-  const randomRecipeArr = ["pasta", "cheese", "sushi", "chicken"];
-
-  const random = Math.floor(Math.random() * randomRecipeArr.length);
-
-  return randomRecipeArr[random];
-  // console.log(randomRecipe[random]);
-  // displayResults();
-}
-
-// randomRecipe();
 
 // Created a selectedCriteria function that will be responsible for collecting the selected user criteria
 // parameters to pass - userSearchInput and selectedCriteria
@@ -99,7 +91,7 @@ function concatUrl(query, healthLabels, dietLabels) {
       newBaseUrl = `${newBaseUrl}&diet=${label}`;
     });
   }
-  console.log(newNutrientsUrl);
+  // console.log(newNutrientsUrl);
   console.log(newBaseUrl);
 
   // console.log(newNutrientsUrl);
