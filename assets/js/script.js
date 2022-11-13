@@ -7,7 +7,7 @@ const carousel = new bootstrap.Carousel(myCarouselElement, {
 
 // Storing base urls for API
 var baseUrl = "https://api.edamam.com/api/recipes/v2?type=public&";
-var nutrientsUrl = "https://api.edamam.com/api/nutrition-details?";
+var nutrientsUrl = "https://api.edamam.com/api/nutrition-details";
 
 // Created an undefined variable to store the newBaseUrl (newBaseUrl === baseUrl + query (q) + ApiID + ApiKey)
 var newBaseUrl, newNutrientsUrl;
@@ -66,7 +66,7 @@ function concatUrl(query, healthLabels, dietLabels) {
   // Create the concatUrl code to concatenate all passed parameters
   // Reassigned the newBaseUrl variable to store the value of the newly created newBaseUrl
   // newBaseUrl = `${baseUrl}q=${query}&app_id=${apiID}&app_key=${apiKey}`;
-  newNutrientsUrl = `${nutrientsUrl}q=${query}&app_id=${nutrientsApiID}&app_key${nutrientsApiKey}`;
+  newNutrientsUrl = `${nutrientsUrl}q=${healthLabels}&app_id=${nutrientsApiID}&app_key${nutrientsApiKey}`;
 
   if (healthLabels) {
     healthLabels.map(function (label) {
@@ -111,12 +111,13 @@ function nutritionGetApi() {
   // BaseUrl for recipe search API
 
   $.ajax({
-    url: nutrientsUrl,
+    url: newNutrientsUrl,
     method: "GET",
   }).then(function (response) {
     console.log(response.hits);
   });
 }
+// 
 // Calling the nutritionGetApi function
 nutritionGetApi();
 
