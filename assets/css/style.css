@@ -50,6 +50,24 @@ body {
   z-index: 1000;
 }
 
+.custom-input-bg {
+  background-color: #f7ddadc3;
+}
+
+.custom-shadow {
+  -webkit-box-shadow: -2px 0px 15px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: -2px 0px 15px 0px rgba(0, 0, 0, 0.3);
+}
+
+#userSearchInput:focus {
+  outline: none;
+  border: none;
+}
+
+.icon-white {
+  color: #fff;
+}
+
 .custom-btn {
   background-color: #f59f00;
   color: #fff;
@@ -59,6 +77,16 @@ body {
   font-size: 108%;
   font-weight: bold;
 }
+
+.custom-btn-bg {
+  background-color: #f59f00;
+  color: #fff;
+}
+
+.custom-btn-bg:hover {
+  background-color: #fcc419;
+}
+
 .custom-btn:hover {
   background-color: #fcc419;
   color: #fff;
