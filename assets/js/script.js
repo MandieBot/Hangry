@@ -7,7 +7,7 @@ const carousel = new bootstrap.Carousel(myCarouselElement, {
 
 // Storing base urls for API
 var baseUrl = "https://api.edamam.com/api/recipes/v2?type=public&";
-var nutrientsUrl = "https://api.edamam.com/api/nutrition-details";
+var nutrientsUrl = "https://api.edamam.com/api/nutrition-data";
 
 // Created an undefined variable to store the newBaseUrl (newBaseUrl === baseUrl + query (q) + ApiID + ApiKey)
 var newBaseUrl, newNutrientsUrl;
@@ -126,84 +126,87 @@ function recipeSearchGetApi(newBaseUrl) {
 }
 // Calling the recipeSearchGetApi function
 
-// // Created a nutritionApi function that will be responsible for fetching api data
-// function nutritionGetApi() {
-//   // BaseUrl for recipe search API
+// // Created a nutritionApi function that will be responsible for fetching nutrition api data
+// -pass ingredientLine value into this function
+// -create a var to store the baseURL
+// -use ajax method to fetch the api
+// --inside the ajax method (example: early 70s lines), use GET method --line 119
+//getting an error 400/401/404
 
-//   $.ajax({
-//     url: newNutrientsUrl,
-//     method: "GET",
-//   }).then(function (response) {
-//     console.log(response.hits);
-//   });
-// }
+function nutritionGetApi() {
+  // BaseUrl for recipe search API
 
-// // Calling the nutritionGetApi function
-// nutritionGetApi();
+  $.ajax({
+    url: newNutrientsUrl,
+    method: "GET",
+  }).then(function (response) {
+    console.log(response.hits);
+  });
+}
 
 // Created a displayResults function that will be responsible for displayingResults
-function displayResults(cardArr) {
-  // console.log(cardArr);
-  // $("#card-container").append("<div class='card'></div>");
-  // console.log(cardArr); //each array
-  // console.log(cardArr.length); //array length = 4
-  // cardArr.forEach((x, index) => {
-  //   console.log(x);
-  //   console.log(index);
-  //   //
-  // });
-  // cardArr.map(function (value, index, array) {
-  //   console.log(array);
-  //   // test += `<h5>${cardArr[0]}</h5>`;
-  //   // $(".card").append("<h5>" + value);
-  //   // $(".card").append(`<h5>${value}</h5>`);
-  //   // $(".card").append(`<img>${value}</img>`);
-  //   // $(".card").append(`<p>${value}</p>`);
-  //   // $(".card").append(`<small>${value}</small>`);
-  // });
-  // $(".card").append(test);
-  // $(this).each(function () {
-  //   $(".card").append(`<h5>${cardArr[0]}</h5>`);
-  // });
-  // for (let i = 0; i < cardArr.length; i++) {
-  //   const element = cardArr[i];
-  //   console.log(element);
-  //   $("#card-container").append("<div class='card'></div>");
-  //   $(".card").append(`<h5>${cardArr[0]}</h5>`);
-  // }
-  // console.log($(this));
-  // $("#card-container").append("<div class='card'></div>");
-  // $(".card").each(function () {
-  //   $(this).append(`<h5>${cardArr[0]}</h5>`);
-  // });
-  // console.log(cardArr[0]);
-  // for (let i = 0; i < cardArr.length; i++) {
-  //   const element = cardArr[i];
-  //   console.log(element);
-  //   $(".card").append(`<h5>${cardArr[0]}</h5>`);
-  // }
-  // $(cardArr[0]).each(function () {
-  //   $(".card").append(`<h5>${cardArr[0]}</h5>`);
-  // });
-  // for (let i = 0; i < cardArr; i++) {
-  //   const element = cardArr[i];
-  //   console.log(cardArr);
-  // }
-  // 1. Grab reference to element
-  // 2. Update that reference
-  // 3. Append
-  // 5. I want to take those 4 items and display each item on a card
-  // a. add each title to a card,
-  // b. add each img to a card,
-  // c. add each cuisine type to a card
-  // d. add each ingredient to the card, but only on hover
-  // 6. I only want to display 6 items until a user clicks the more btn
-  // $(".card").each(function (index, card) {
-  //   if (index === 0) {
-  //   }
-  // });
-  // add data
-}
+// function displayResults(cardArr) {
+// console.log(cardArr);
+// $("#card-container").append("<div class='card'></div>");
+// console.log(cardArr); //each array
+// console.log(cardArr.length); //array length = 4
+// cardArr.forEach((x, index) => {
+//   console.log(x);
+//   console.log(index);
+//   //
+// });
+// cardArr.map(function (value, index, array) {
+//   console.log(array);
+//   // test += `<h5>${cardArr[0]}</h5>`;
+//   // $(".card").append("<h5>" + value);
+//   // $(".card").append(`<h5>${value}</h5>`);
+//   // $(".card").append(`<img>${value}</img>`);
+//   // $(".card").append(`<p>${value}</p>`);
+//   // $(".card").append(`<small>${value}</small>`);
+// });
+// $(".card").append(test);
+// $(this).each(function () {
+//   $(".card").append(`<h5>${cardArr[0]}</h5>`);
+// });
+// for (let i = 0; i < cardArr.length; i++) {
+//   const element = cardArr[i];
+//   console.log(element);
+//   $("#card-container").append("<div class='card'></div>");
+//   $(".card").append(`<h5>${cardArr[0]}</h5>`);
+// }
+// console.log($(this));
+// $("#card-container").append("<div class='card'></div>");
+// $(".card").each(function () {
+//   $(this).append(`<h5>${cardArr[0]}</h5>`);
+// });
+// console.log(cardArr[0]);
+// for (let i = 0; i < cardArr.length; i++) {
+//   const element = cardArr[i];
+//   console.log(element);
+//   $(".card").append(`<h5>${cardArr[0]}</h5>`);
+// }
+// $(cardArr[0]).each(function () {
+//   $(".card").append(`<h5>${cardArr[0]}</h5>`);
+// });
+// for (let i = 0; i < cardArr; i++) {
+//   const element = cardArr[i];
+//   console.log(cardArr);
+// }
+// 1. Grab reference to element
+// 2. Update that reference
+// 3. Append
+// 5. I want to take those 4 items and display each item on a card
+// a. add each title to a card,
+// b. add each img to a card,
+// c. add each cuisine type to a card
+// d. add each ingredient to the card, but only on hover
+// 6. I only want to display 6 items until a user clicks the more btn
+// $(".card").each(function (index, card) {
+//   if (index === 0) {
+//   }
+// });
+// add data
+// }
 
 // RESOURCES ::
 // ajax () - https://api.jquery.com/jquery.ajax/
