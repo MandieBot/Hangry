@@ -12,14 +12,15 @@ body {
   background: linear-gradient(180deg, rgba(255, 245, 225, 0.6671043417366946) 23%, rgba(245, 159, 0, 0.2805497198879552) 74%);
 }
 .website-logo {
-  height: 120px;
-  /* margin: 10px 10px 10px 20px; */
+  height: 64px;
+  width: auto;
 }
 /* Nav button */
 #hangry-button {
   margin: 15px;
-  height: 45px;
-  width: 120px;
+  /* height: 45px; */
+  /* width: 10rem; */
+  padding: 0.6rem 1.2rem;
   background-color: #f59f00;
   color: #fff;
   border: none;
@@ -33,7 +34,7 @@ body {
   background-color: #fcc419;
 }
 
-/* Custom Css */
+/* Custom CSS for bootstrap txts */
 .custom-img-sizing {
   width: 100%;
   object-fit: cover;
@@ -98,6 +99,10 @@ body {
   height: 25rem;
 }
 
+.card:hover {
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.08);
+}
+
 .ul-formatting {
   list-style: none;
   display: contents;
@@ -105,4 +110,35 @@ body {
 
 .custom-footer-bg {
   background-color: #a3a2a2;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem;
+  text-align: center;
+}
+
+.search-button:focus {
+  outline: none;
+}
+
+/* Making the site Responsive  */
+@media screen and (max-width: 999px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 80%;
+  }
+
+  #hungry-button {
+    width: 70%;
+  }
+
+  .criterias {
+    display: flex;
+    justify-content: space-evenly;
+  }
 }
