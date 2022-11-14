@@ -12,16 +12,14 @@ body {
   background: linear-gradient(180deg, rgba(255, 245, 225, 0.6671043417366946) 23%, rgba(245, 159, 0, 0.2805497198879552) 74%);
 }
 .website-logo {
-  height: 120px;
-  /* margin: 10px 10px 10px 20px; */
-  background-color: none;
-  border-radius: 12px;
+  height: 64px;
+  width: auto;
 }
 /* Nav button */
 #hangry-button {
   margin: 15px;
   /* height: 45px; */
-  width: 10rem;
+  /* width: 10rem; */
   padding: 0.6rem 1.2rem;
   background-color: #f59f00;
   color: #fff;
@@ -36,7 +34,7 @@ body {
   background-color: #fcc419;
 }
 
-/* Custom Css */
+/* Custom CSS for bootstrap txts */
 .custom-img-sizing {
   width: 100%;
   object-fit: cover;
@@ -96,14 +94,15 @@ header {
 .search-button:focus {
   outline: none;
 }
+
 /* Making the site Responsive  */
 @media screen and (max-width: 999px) {
   header {
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-    /* justify-content: center; */
+    justify-content: space-between;
     align-items: center;
+    font-size: 80%;
   }
 
   #hungry-button {
@@ -114,8 +113,4 @@ header {
     display: flex;
     justify-content: space-evenly;
   }
-
-  /* .contributers {
-    text-align: right;
-  } */
 }
