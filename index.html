@@ -22,7 +22,7 @@
       <nav class="navbar bg-light">
         <!-- Added home page link to the logo image. Also added formatting to the logo in css -->
         <a href="./index.html"><img src="./assets/images/finalLogo.png" alt="hamburger" id="website-logo" class="website-logo" /></a>
-        <h2 class="fs-1 fw-bold">HANGRY<small class="text-muted fst-italic fw-light fs-4 ms-4">For when you have food swings</small></h2>
+        <h2 class="fs-1 fw-bold custom-letter-size">HANGRY<small class="text-muted fst-italic fw-light fs-4 ms-4">For when you have food swings</small></h2>
         <button id="hangry-button">Feed Me!</button>
       </nav>
     </header>
@@ -89,16 +89,6 @@
               />
             </div>
           </div>
-          <!-- Carousel previous button -->
-          <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev"> -->
-            <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
-            <!-- <span class="visually-hidden">Previous</span> -->
-          <!-- </button> -->
-          <!-- Carousel next button -->
-          <!-- <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next"> -->
-            <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
-            <!-- <span class="visually-hidden">Next</span> -->
-          <!-- </button> -->
         </div>
         <!-- Search Box -->
         <div class="search-bar bg-light rounded-4 w-50 p-4 || d-flex align-items-center || custom-input">
@@ -118,13 +108,12 @@
     </section>
     <!-- Main section -->
     <main>
-      <section class="card-section m-5">
-        <div class="container m-5 m-auto" style="min-height: 50rem; max-width: 1200px;">
+      <section class="card-section m-5 ">
+        <div class="container m-5 m-auto shadow-lg rounded-4 overflow-hidden " style="min-height: 50rem; max-width: 1200px;">
           <div class="row selection-container" id="userSelectedCriteria">
           <!-- Search Criteria container -->
           <div class="col-lg-2 bg-white d-flex justify-content-center" style="min-height: 10rem">
             <aside class="w-100 my-4 px-3">
-            <!-- h2????? -->
             <p class="mt-3 fs-4 text-center fw-bold">Search Criteria</p>
             <!-- Diet Filters -->
             <p class="mt-5 fw-bold">Diet Filters</p>
@@ -182,100 +171,41 @@
           </aside>
           </div>
           <!-- Cards container -->
-          <div class="col-lg-10 bg-white d-flex flex-wrap justify-content-center align-content-center" style="min-height: 50rem">
+          <div id="card-container" class="col-lg-10 bg-white d-flex flex-wrap justify-content-center align-content-center " style="min-height: 50rem">
             <!-- Card -->
-            <div id="card-1"  class="card my-3 mx-2" style="width: 17rem; height: 20rem">
-              <img src="" class="card-img-top" alt="..." />
-              <div class="card-body">
-               <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn custom-btn">Feed me!</a>
-              </div>
-            </div>
-            <!-- Card -->
-            <div class="card my-3 mx-2" style="width: 17rem; height: 20rem">
-            <img src="" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn custom-btn">Feed Me!</a>
-            </div>
-            </div>
-            <!-- Card -->
-            <div class="card my-3 mx-2" style="width: 17rem; height: 20rem">
-            <img src="" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn custom-btn">Feed Me!</a>
-            </div>
-            </div>
-            <!-- Card -->
-            <div class="card my-3 mx-2" style="width: 17rem; height: 20rem">
-            <img src="" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn custom-btn">Feed Me!</a>
-            </div>
-            </div>
-            <!-- Card -->
-            <div class="card my-3 mx-2" style="width: 17rem; height: 20rem">
-            <img src="" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn custom-btn">Feed Me!</a>
-            </div>
-            </div>
-            <!-- Card -->
-            <div class="card my-3 mx-2" style="width: 17rem; height: 20rem">
-            <img src="" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn custom-btn">Feed Me!</a>
-            </div>
-            </div>
+            
             <!-- More button container -->
-            <div class="d-flex mt-3 justify-content-center">
+            <!-- <div class="d-flex mt-3 justify-content-center">
               <button class="btn custom-btn">Load More Results</button>
-            </div>
+            </div> -->
           </div>
         </div>
       </section>
     </main>
     <!-- Footer section -->
     <!-- Added background color to footer -->
-    <footer class="bg-secondary">
-      <div class="container col-xxl-8 col-md-12">
+    <footer class="custom-footer-bg">
+      <div class="container-fluid">
         <div class="row py-5">
-          <!-- //Clickable logo that directs you back to the home page (absolute positioning) -->
           <div class="col-6 col-md-4 col-lg-4">
-            <!-- Added clickable feature to logo -->
             <a href="#website-logo"> <img src="./assets/images/finalLogo.png" alt="hamburger" class="website-logo" /></a>
           </div>
           <div class="col-6 col-md-4 col-lg-4">
-            <!-- Added text color to title -->
             <h4 class="text-light">API Links</h4>
-            <!-- Added API links for each API and changed text color to light -->
             <ul class="ul-formatting">
-              <a href="https://www.google.com/" target="_blank" class="text-light text-decoration-none"> <li>Recipe Search API Link</li></a>
-              <a href="https://www.google.com/" target="_blank" class="text-light text-decoration-none"> <li>Nutrition Analysis API Link</li></a>
+              <a href="https://developer.edamam.com/edamam-docs-recipe-api
+" target="_blank" class="text-light text-decoration-none"> <li>Recipe Search API Link</li></a>
+              <a href="https://developer.edamam.com/edamam-docs-nutrition-api#/
+" target="_blank" class="text-light text-decoration-none"> <li>Nutrition Analysis API Link</li></a>
             </ul>
           </div>
           <div class="col-6 col-md-4 col-lg-4">
-            <!-- Added text color to title -->
             <h4 class="text-light">Contributors</h4>
-            <!-- Added ul formatting in css -->
             <ul class="ul-formatting">
-              <!-- //Github links -->
-              <!-- Added Github links for each memeber and changed text color to light -->
               <a href="https://github.com/T3mpz" target="_blank" class="text-light text-decoration-none"> <li>Christian Bega</li></a>
               <a href="https://github.com/edyta0106" target="_blank" class="text-light text-decoration-none"> <li>Edyta Radomska</li></a>
               <a href="https://github.com/MandieBot" target="_blank" class="text-light text-decoration-none"> <li>Mandie Botinelly</li></a>
               <a href="https://github.com/mo-aden" target="_blank" class="text-light text-decoration-none"> <li>Mohamed Aden</li></a>
-              <a href="https://github.com/NicoletteBoggs" target="_blank" class="text-light text-decoration-none"> <li>Nicolette Boggs</li></a>
             </ul>
           </div>
         </div>
