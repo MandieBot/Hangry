@@ -19,12 +19,13 @@
     <header>
       <!-- Navigation bar -->
       <!-- Used bootstrap class for Nav bar layout -->
-      <nav class="navbar bg-light">
+      <nav class="navbar ">
         <!-- Added home page link to the logo image. Also added formatting to the logo in css -->
-        <a href="./index.html"><img src="./assets/images/finalLogo.png" alt="hamburger" id="website-logo" class="website-logo" /></a>
-        <h2 class="fs-1 fw-bold custom-letter-size">HANGRY<small class="text-muted fst-italic fw-light fs-4 ms-4">For when you have food swings</small></h2>
-        <button id="hangry-button">Feed Me!</button>
+        <a href="./index.html"><img src="./assets/images/finalLogo copy.png" alt="hamburger" id="website-logo" class="website-logo" /></a>  
+         <h2  class="fs-1 fw-bold custom-heading">HANGRY<small class="text-muted fst-italic fw-light fs-4 ms-4">For when you have food swings</small></h2>
       </nav>
+    
+        <button id="hangry-button">Feed Me Recipes !!</button>
     </header>
     <!-- Carousel section -->
     <section class="carousel-section">
@@ -115,7 +116,10 @@
           <div class="col-lg-2 bg-white d-flex justify-content-center" style="min-height: 10rem">
             <aside class="w-100 my-4 px-3">
             <p class="mt-3 fs-4 text-center fw-bold">Search Criteria</p>
+
+            <div class="criterias"> 
             <!-- Diet Filters -->
+            <div class="diet-filters">  
             <p class="mt-5 fw-bold">Diet Filters</p>
             <div class="form-check">
               <ul class="ul-formatting">
@@ -141,7 +145,9 @@
             </li>
               </ul>
             </div>
+            </div>
             <!-- Food Allergies -->
+            <div class="food-allergies">  
            <p class="mt-5 fw-bold">Food Allergies</p>
           <div class="form-check">
             <ul class="ul-formatting">
@@ -167,6 +173,8 @@
               </li>
              </ul>
           </div>
+          </div>
+          </div>
           <div class="d-flex justify-content-center"><button id="apply-button" class="btn mt-5 custom-btn">Apply Filters</button></div>
           </aside>
           </div>
@@ -188,7 +196,7 @@
       <div class="container-fluid">
         <div class="row py-5">
           <div class="col-6 col-md-4 col-lg-4">
-            <a href="#website-logo"> <img src="./assets/images/finalLogo.png" alt="hamburger" class="website-logo" /></a>
+            <a href="#website-logo"> <img src="./assets/images/finalLogo copy.png" alt="hamburger" class="website-logo" /></a>
           </div>
           <div class="col-6 col-md-4 col-lg-4">
             <h4 class="text-light">API Links</h4>
@@ -199,7 +207,7 @@
 " target="_blank" class="text-light text-decoration-none"> <li>Nutrition Analysis API Link</li></a>
             </ul>
           </div>
-          <div class="col-6 col-md-4 col-lg-4">
+          <div id="contributers" class="col-6 col-md-4 col-lg-4">
             <h4 class="text-light">Contributors</h4>
             <ul class="ul-formatting">
               <a href="https://github.com/T3mpz" target="_blank" class="text-light text-decoration-none"> <li>Christian Bega</li></a>
