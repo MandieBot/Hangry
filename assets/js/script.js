@@ -7,7 +7,7 @@ const carousel = new bootstrap.Carousel(myCarouselElement, {
 
 // Storing base urls for API
 var baseUrl = "https://api.edamam.com/api/recipes/v2?type=public&";
-var nutrientsUrl = "https://api.edamam.com/api/nutrition-data";
+var nutrientsUrl = "https://api.edamam.com/api/nutrition-details";
 
 // Created an undefined variable to store the newBaseUrl (newBaseUrl === baseUrl + query (q) + ApiID + ApiKey)
 var newBaseUrl, newNutrientsUrl;
@@ -64,6 +64,7 @@ function concatUrl(query, healthLabels, dietLabels) {
   // Reassigned the newBaseUrl variable to store the value of the newly created newBaseUrl
   newBaseUrl = `${baseUrl}q=${query}&app_id=${apiID}&app_key=${apiKey}`;
   newNutrientsUrl = `${nutrientsUrl}q=${healthLabels}&app_id=${nutrientsApiID}&app_key${nutrientsApiKey}`;
+  console.log(newNutrientsUrl);
 
   if (healthLabels) {
     healthLabels.map(function (label) {
@@ -76,7 +77,7 @@ function concatUrl(query, healthLabels, dietLabels) {
     });
   }
   recipeSearchGetApi(newBaseUrl);
-  nutritionGetApi(newNutrientsUrl);
+  // nutritionGetApi(newNutrientsUrl);
 }
 
 // Created a recipeSearchApi function that will be responsible for fetching api data
@@ -85,12 +86,42 @@ function recipeSearchGetApi(newBaseUrl) {
     url: newBaseUrl,
     method: "GET",
     dataType: "json",
+    contentType: "application/JSON",
+    // }).then(function (response) {
   }).then(function (response) {
     let res = response.hits;
     let dataFromResponse = "";
 
     console.log(res);
-    res.map(function (value) {
+    var recipeArray = res.slice(0, 6);
+    var testUrl = "https://api.edamam.com/api/nutrition-details?app_id=81660670&app_key=bf3c626930152d5249b50c2db0532e9b";
+    for (const obj of recipeArray) {
+      var ingArray = obj.recipe.ingredientLines;
+      console.log(ingArray);
+      // var res2 = await $.post({
+      //   testUrl,
+      //   data: {
+      //     title: "string",
+      //     ingr: ["string"],
+      //     url: "string",
+      //     summary: "string",
+      //     yield: "string",
+      //     time: "string",
+      //     img: "string",
+      //     prep: "string",
+      //   },
+      // });
+      $.ajax({
+        type: "POST",
+        url: testUrl,
+        data: JSON.stringify({ title: "pizza" }),
+        contentType: "application/JSON",
+      }).then(function (response) {
+        console.log(response);
+      });
+      // console.log(res2);
+    }
+    res.slice(0, 6).map(function (value) {
       dataFromResponse += `<div class="card my-3 mx-2">
       <div class="card-body">
       <img class="card-img-top" src=${value.recipe.images.SMALL.url}></img>
@@ -99,6 +130,7 @@ function recipeSearchGetApi(newBaseUrl) {
       <p class="card-text">${value.recipe.dishType[0]}</p>
       </div>
       </div>`;
+      // console.log(value.recipe.ingredientLine);
     });
     $("#card-container").append(dataFromResponse);
 
@@ -111,7 +143,7 @@ function recipeSearchGetApi(newBaseUrl) {
     //   let dishType = element.recipe.dishType[0];
     //   ingredients = element.recipe.ingredients;
     //   // let ingredientsLine = element.recipe.ingredientLines[0];
-    //   // console.log(ingredientLine);
+    // console.log(ingredientLine);
     //   dataFromResponse.push(title, image, cuisine, dishType);
     // }
     // // let card =
@@ -132,6 +164,13 @@ function recipeSearchGetApi(newBaseUrl) {
 // -use ajax method to fetch the api
 // --inside the ajax method (example: early 70s lines), use GET method --line 119
 //getting an error 400/401/404
+
+//change our method to POST
+//add body to ajax method
+//inside body: need to find title, ingredientsLine, summary, yield, time(?)
+//inside body: add another .then and pass the information to this new API
+//parse through data and DOM manipulate
+//review our code and review the chronology
 
 function nutritionGetApi() {
   // BaseUrl for recipe search API
