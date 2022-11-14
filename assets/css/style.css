@@ -14,12 +14,15 @@ body {
 .website-logo {
   height: 120px;
   /* margin: 10px 10px 10px 20px; */
+  background-color: none;
+  border-radius: 12px;
 }
 /* Nav button */
 #hangry-button {
   margin: 15px;
-  height: 45px;
-  width: 120px;
+  /* height: 45px; */
+  width: 10rem;
+  padding: 0.6rem 1.2rem;
   background-color: #f59f00;
   color: #fff;
   border: none;
@@ -70,6 +73,10 @@ body {
   height: 25rem;
 }
 
+.card:hover {
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.08);
+}
+
 .ul-formatting {
   list-style: none;
   display: contents;
@@ -77,4 +84,38 @@ body {
 
 .custom-footer-bg {
   background-color: #a3a2a2;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem;
+  text-align: center;
+}
+
+.search-button:focus {
+  outline: none;
+}
+/* Making the site Responsive  */
+@media screen and (max-width: 999px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* justify-content: center; */
+    align-items: center;
+  }
+
+  #hungry-button {
+    width: 70%;
+  }
+
+  .criterias {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  /* .contributers {
+    text-align: right;
+  } */
 }
