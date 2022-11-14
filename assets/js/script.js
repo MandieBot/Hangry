@@ -20,20 +20,17 @@ $("#search-button").on("click", function () {
 
 // Created an event listener to listen for click events on random Recipe
 $("#hangry-button").on("click", function () {
-  let randomSearchParameter = randomRecipe();
-  concatUrl(randomSearchParameter);
+  const randomRecipeArr = ["pasta", "cheese", "sushi", "chicken", "eggs", "hamburger"];
+
+  //Random func
+  const random = function (min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  };
+
+  for (let i = 0; i < randomRecipeArr.length; i++) {
+    concatUrl(randomRecipeArr[i]);
+  }
 });
-
-// Created a randomRecipe function that will be responsible for randomly choosing a recipe
-function randomRecipe() {
-  //Arr to generate random Recipes, we'll need more to get at least 6 inputs displayed on the cards.
-  const randomRecipeArr = ["pasta", "cheese", "sushi", "chicken"];
-
-  const random = Math.floor(Math.random() * randomRecipeArr.length);
-
-  return randomRecipeArr[random];
-  // displayResults();
-}
 
 // Created a selectedCriteria function that will be responsible for collecting the selected user criteria
 function selectedCriteria() {
