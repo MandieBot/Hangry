@@ -147,8 +147,16 @@ function displayResults(c1, c2, c3, c4, c5, c6) {
   // d. add each ingredient to the card, but only on hover
   // 6. I only want to display 6 items until a user clicks the more btn
 
-  $(".card").each(function (index, card) {
-    // card[0].text(c1[0]);
+  $(".card").each(function () {
+    var cardCount = $(this).attr("data-value");
+    console.log(cardCount);
+    // $(".card-title").text(`${c1[0]}`);
+    $("[attribute=1] .card-title").text(`${c1[0]}`);
+
+    // if (cardCount === 1) {
+    //   // $(this).append(`<p>${c1[0]}</p>`);
+    //   $(".card-title").text(`${c1[0]}`);
+    // }
   });
   // add data
 }
