@@ -90,7 +90,7 @@ function recipeSearchGetApi(newBaseUrl) {
   $.ajax({
     url: newBaseUrl,
     method: "GET",
-    dataType: "json",
+    dataType: "json", 
     contentType: "application/JSON",
     // }).then(function (response) {
   }).then(function (response) {
