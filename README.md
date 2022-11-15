@@ -29,4 +29,11 @@ The following link deploys the application:
 
 [Hangry App](https://mandiebot.github.io/Hangry/)
 
+### Developers
+
+- [Mandie Botinelly](https://github.com/MandieBot)
+- [Mohamed Aden](https://github.com/mo-aden)
+- [Christian Bega](https://github.com/T3mpz)
+- [Edyta Radomska](https://github.com/edyta0106)
+
 ![Alt text](./assets/images/Screenshot%20of%20Deplyed%20App.png)
