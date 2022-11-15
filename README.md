@@ -16,7 +16,7 @@ SO THAT I can display recipe results based on user input
 
 - WHEN I open the application
 - THEN I am presented with 6 random recipes displayed on the page
-- WHEN I click on the 'Feed Me' button inside the header
+- WHEN I click on the 'Feed Me Recipes!' button inside the header
 - THEN I am able to display a new set of 6 random recipes
 - WHEN I input text in the search bar
 - THEN I am presented with 6 search results based user input
