@@ -22,13 +22,11 @@ SO THAT I can display recipe results based on user input
 - THEN I am presented with 6 search results based user input
 - WHEN I select search criteria filters
 - THEN I am able to apply those filters to the search results
-- WHEN I click on a button to show more results
-- THEN I am presented with 6 new random recipes based on user input
-- WHEN I hover over a results recipe card
-- THEN I am able to view the Nutritional Value of the recipe and I am able to click on the link that takes me to the recipe website
+- WHEN I click on the logo at the top of the page
+- THEN I am able to refresh to the home page
 
 The following link deploys the application:
 
 [Hangry App](https://mandiebot.github.io/Hangry/)
 
-![Alt text](./assets/images/image.png)
+![Alt text](./assets/images/Screenshot%20of%20Deplyed%20App.png)
