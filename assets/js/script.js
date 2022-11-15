@@ -90,7 +90,7 @@ function recipeSearchGetApi(newBaseUrl) {
   $.ajax({
     url: newBaseUrl,
     method: "GET",
-    dataType: "json", 
+    dataType: "json",
     contentType: "application/JSON",
     // When promise is fulfilled then >
   }).then(function (response) {
@@ -101,7 +101,19 @@ function recipeSearchGetApi(newBaseUrl) {
     let dataFromResponse = "";
     let dataFrom2ndResponse = "";
     let testArray = [];
-    var recipeArray = res.slice(0, 1);
+    var recipeArray = res.slice(0, 6);
+    recipeArray.map(function (value, index) {
+      dataFromResponse += `<div class="card my-3 mx-2" key="${index}">
+      <div class="card-body">
+      <a href="${value.recipe.url}" target="_blank" class="link">
+      <img class="card-img-top" style="Height: 225px; Width: 100%;" src=${value.recipe.images.SMALL.url}></img>
+      <h5 class="card-title my-3">${value.recipe.label}</h5>
+      <p class="card-text mb-0">${value.recipe.cuisineType[0]}</p>
+      <p class="card-text">${value.recipe.dishType[0]}</p>
+      </a>
+      </div>
+      </div>`;
+    });
     for (const obj of recipeArray) {
       var ingArray = obj.recipe.ingredientLines;
       // console.log(ingArray);
@@ -109,46 +121,48 @@ function recipeSearchGetApi(newBaseUrl) {
       // proteins = 0;
       // carbs = 0;
       // fat = 0;
-      for (let i = 0; i < ingArray.length; i++) {
-        function ajax(response) {
-          $.ajax({
-            type: "GET", //GET
-            url:
-              nutritionUrl +
-              JSON.stringify(ingArray).replaceAll(";", "").replaceAll(",", "").replaceAll('"', "").replaceAll("[", "").replaceAll("]", ""),
-          }).then(function (response) {
-            // calories += response.calories;
-            // proteins += response.totalNutrients.PROCNT.quantity.toFixed(0);
-            // carbs += response.totalNutrients.CHOCDF.quantity.toFixed(0);
-            // fat += response.totalNutrients.FAT.quantity.toFixed(0);
-            testArray.push(response.calories);
-            testArray.push(response.totalNutrients.PROCNT.quantity);
-            testArray.push(response.totalNutrients.CHOCDF.quantity);
-            testArray.push(response.totalNutrients.FAT.quantity);
-            dataFrom2ndResponse += `<div class="card">
-            <p class="card-text">${response.calories}</p>
-            <p class="card-text">${response.totalNutrients.PROCNT.quantity.toFixed(0)}</p>
-            <p class="card-text">${response.totalNutrients.CHOCDF.quantity.toFixed(0)}</p>
-            <p class="card-text">${response.totalNutrients.FAT.quantity.toFixed(0)}</p>
-            </div>`;
+      // for (let i = 0; i < ingArray.length; i++) {
+      // function ajax(response) {
+      //   $.ajax({
+      //     type: "GET", //GET
+      //     url:
+      //       nutritionUrl +
+      //       JSON.stringify(ingArray).replaceAll(";", "").replaceAll(",", "").replaceAll('"', "").replaceAll("[", "").replaceAll("]", ""),
+      //   }).then(function (response) {
+      //     console.log(response);
+      //     // calories += response.calories;
+      //     // proteins += response.totalNutrients.PROCNT.quantity.toFixed(0);
+      //     // carbs += response.totalNutrients.CHOCDF.quantity.toFixed(0);
+      //     // fat += response.totalNutrients.FAT.quantity.toFixed(0);
+      //     // testArray.push(response.calories);
+      //     // testArray.push(response.totalNutrients.PROCNT.quantity);
+      //     // testArray.push(response.totalNutrients.CHOCDF.quantity);
+      //     // testArray.push(response.totalNutrients.FAT.quantity);
+      //     dataFrom2ndResponse += `
+      //       <p class="card-text">${response.calories}</p>
+      //       <p class="card-text">${response.totalNutrients.PROCNT.quantity.toFixed(0)}</p>
+      //       <p class="card-text">${response.totalNutrients.CHOCDF.quantity.toFixed(0)}</p>
+      //       <p class="card-text">${response.totalNutrients.FAT.quantity.toFixed(0)}</p>
+      //      `;
 
-            // test += `<div class="card my-3 mx-2">${response.calories}<div>`;
-            // calories += response.totalNutrients.ENERC_KCAL;
-            // proteins += response.totalNutrients.PROCNT;
-            // carbs += response.totalNutrients.CHOCDF;
-            // fat += response.totalNutrients.FAT;
-            // ,
-            // console.log(carbs, fat);
-            // console.log(calories, proteins, carbs, fat);
-            $("#card-container").append(dataFrom2ndResponse);
-          });
-        }
-        ajax();
-        // How to get response onto cards from 2nd api
-        // DOM manipulation
-      }
+      //     // test += `<div class="card my-3 mx-2">${response.calories}<div>`;
+      //     // calories += response.totalNutrients.ENERC_KCAL;
+      //     // proteins += response.totalNutrients.PROCNT;
+      //     // carbs += response.totalNutrients.CHOCDF;
+      //     // fat += response.totalNutrients.FAT;
+      //     // ,
+      //     // console.log(carbs, fat);
+      //     // console.log(calories, proteins, carbs, fat);
+      //     $(".card").append(dataFrom2ndResponse);
+      //   });
+      // }
+      // ajax();
+      // How to get response onto cards from 2nd api
+      // DOM manipulation
+      // }
+      console.log(testArray);
     }
-    // console.log(testArray);
+
     // slice my array
     //
     // testArray.map(function (value) {
@@ -160,18 +174,6 @@ function recipeSearchGetApi(newBaseUrl) {
     //var newTestArray = testArray.splice(0,3);
     // map over the newtestArray
 
-    recipeArray.map(function (value) {
-      dataFromResponse += `<div class="card my-3 mx-2">
-      <div class="card-body">
-      <a href="${value.recipe.url}" target="_blank" class="link">
-      <img class="card-img-top" style="Height: 225px; Width: 100%;" src=${value.recipe.images.SMALL.url}></img>
-      <h5 class="card-title my-3">${value.recipe.label}</h5>
-      <p class="card-text mb-0">${value.recipe.cuisineType[0]}</p>
-      <p class="card-text">${value.recipe.dishType[0]}</p>
-      </a>
-      </div>
-      </div>`;
-    });
     $("#card-container").append(dataFromResponse);
 
     // dataFrom2ndResponse += `<p>${}<p>`;
