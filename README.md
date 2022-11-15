@@ -25,7 +25,7 @@ SO THAT I can display recipe results based on user input
 - WHEN I click on a button to show more results
 - THEN I am presented with 6 new random recipes based on user input
 - WHEN I hover over a results recipe card
-- THEN I am able to view the Nutrional Value of the recipe and I am able to click on the link that takes me to the recipe website
+- THEN I am able to view the Nutritional Value of the recipe and I am able to click on the link that takes me to the recipe website
 
 The following link deploys the application:
 

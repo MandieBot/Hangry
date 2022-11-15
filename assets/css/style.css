@@ -29,6 +29,8 @@ body {
   font-size: 120%;
   font-weight: bold;
   text-transform: uppercase;
+  -webkit-box-shadow: -2px px 5px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: -2px 2px 5px 0px rgba(0, 0, 0, 0.3);
 }
 #hangry-button:hover {
   background-color: #fcc419;
@@ -117,6 +119,7 @@ header {
   align-items: center;
   padding: 1.2rem;
   text-align: center;
+  background: rgb(247, 239, 224);
 }
 
 .search-button:focus {
@@ -141,4 +144,12 @@ header {
     display: flex;
     justify-content: space-evenly;
   }
+}
+
+.link {
+  text-decoration: none;
+  color: #333;
+}
+.card-text {
+  text-transform: capitalize;
 }
