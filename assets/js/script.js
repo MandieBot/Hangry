@@ -94,15 +94,12 @@ function recipeSearchGetApi(newBaseUrl) {
     contentType: "application/JSON",
     // When promise is fulfilled then >
   }).then(function (response) {
-    console.log(response);
     // Store hits from promise object
-    var nutritionUrl = "https://api.edamam.com/api/nutrition-data?app_id=eb361307&app_key=813f2f98ec01273313c3d2b030cd8d4d&ingr=";
     let res = response.hits;
     let dataFromResponse = "";
-    let dataFrom2ndResponse = "";
-    let testArray = [];
-    var recipeArray = res.slice(0, 6);
+    let recipeArray = res.slice(0, 3);
     recipeArray.map(function (value, index) {
+      let test = value.recipe.ingredientLines;
       dataFromResponse += `<div class="card my-3 mx-2" key="${index}">
       <div class="card-body">
       <a href="${value.recipe.url}" target="_blank" class="link">
@@ -113,71 +110,80 @@ function recipeSearchGetApi(newBaseUrl) {
       </a>
       </div>
       </div>`;
+      nutrientsGetApi(test);
     });
-    for (const obj of recipeArray) {
-      var ingArray = obj.recipe.ingredientLines;
-      // console.log(ingArray);
-      // calories = 0;
-      // proteins = 0;
-      // carbs = 0;
-      // fat = 0;
-      // for (let i = 0; i < ingArray.length; i++) {
-      // function ajax(response) {
-      //   $.ajax({
-      //     type: "GET", //GET
-      //     url:
-      //       nutritionUrl +
-      //       JSON.stringify(ingArray).replaceAll(";", "").replaceAll(",", "").replaceAll('"', "").replaceAll("[", "").replaceAll("]", ""),
-      //   }).then(function (response) {
-      //     console.log(response);
-      //     // calories += response.calories;
-      //     // proteins += response.totalNutrients.PROCNT.quantity.toFixed(0);
-      //     // carbs += response.totalNutrients.CHOCDF.quantity.toFixed(0);
-      //     // fat += response.totalNutrients.FAT.quantity.toFixed(0);
-      //     // testArray.push(response.calories);
-      //     // testArray.push(response.totalNutrients.PROCNT.quantity);
-      //     // testArray.push(response.totalNutrients.CHOCDF.quantity);
-      //     // testArray.push(response.totalNutrients.FAT.quantity);
-      //     dataFrom2ndResponse += `
-      //       <p class="card-text">${response.calories}</p>
-      //       <p class="card-text">${response.totalNutrients.PROCNT.quantity.toFixed(0)}</p>
-      //       <p class="card-text">${response.totalNutrients.CHOCDF.quantity.toFixed(0)}</p>
-      //       <p class="card-text">${response.totalNutrients.FAT.quantity.toFixed(0)}</p>
-      //      `;
-
-      //     // test += `<div class="card my-3 mx-2">${response.calories}<div>`;
-      //     // calories += response.totalNutrients.ENERC_KCAL;
-      //     // proteins += response.totalNutrients.PROCNT;
-      //     // carbs += response.totalNutrients.CHOCDF;
-      //     // fat += response.totalNutrients.FAT;
-      //     // ,
-      //     // console.log(carbs, fat);
-      //     // console.log(calories, proteins, carbs, fat);
-      //     $(".card").append(dataFrom2ndResponse);
-      //   });
-      // }
-      // ajax();
-      // How to get response onto cards from 2nd api
-      // DOM manipulation
-      // }
-      console.log(testArray);
-    }
-
-    // slice my array
-    //
-    // testArray.map(function (value) {
-    //   // console.log(value);
-    //   dataFrom2ndResponse += `<p class="card-text">${value}</p>`;
-    // });
-
-    // .splice on testarray for each 0 - 3 index
-    //var newTestArray = testArray.splice(0,3);
-    // map over the newtestArray
 
     $("#card-container").append(dataFromResponse);
+  });
+}
+function nutrientsGetApi(data) {
+  var nutritionUrl = "https://api.edamam.com/api/nutrition-data?app_id=eb361307&app_key=813f2f98ec01273313c3d2b030cd8d4d&ingr=";
+  $.ajax({
+    type: "GET",
+    url: nutritionUrl + JSON.stringify(data).replaceAll(";", "").replaceAll(",", "").replaceAll('"', "").replaceAll("[", "").replaceAll("]", ""),
+  }).then(function (dataRes) {
+    console.log(dataRes);
 
-    // dataFrom2ndResponse += `<p>${}<p>`;
+    // dataRes.each()
+    // console.log(dataRes.calories);
+    // console.log(dataRes.totalNutrients.CHOCDF.quantity);
+    // console.log(dataRes.totalNutrients.FAT.quantity);
+    // console.log(dataRes.totalNutrients.PROCNT.quantity);
+
+    var cardBack = `<div class="card-back">
+    <p>${dataRes.calories}<p>
+    <p>${dataRes.totalNutrients.CHOCDF.quantity}<p>
+    <p>${dataRes.totalNutrients.FAT.quantity}<p>
+    <p>${dataRes.totalNutrients.PROCNT.quantity}<p>
+    </div>`;
+    // // cardBack.append($(this).parent());
+    $(".card").append(cardBack);
   });
 }
 
 // value.recipe.url
+
+// console.log(ingArray);
+// calories = 0;
+// proteins = 0;
+// carbs = 0;
+// fat = 0;
+// for (let i = 0; i < ingArray.length; i++) {
+// function ajax(response) {
+//   $.ajax({
+//     type: "GET", //GET
+//     url:
+//       nutritionUrl +
+//       JSON.stringify(ingArray).replaceAll(";", "").replaceAll(",", "").replaceAll('"', "").replaceAll("[", "").replaceAll("]", ""),
+//   }).then(function (response) {
+//     console.log(response);
+//     // calories += response.calories;
+//     // proteins += response.totalNutrients.PROCNT.quantity.toFixed(0);
+//     // carbs += response.totalNutrients.CHOCDF.quantity.toFixed(0);
+//     // fat += response.totalNutrients.FAT.quantity.toFixed(0);
+//     // testArray.push(response.calories);
+//     // testArray.push(response.totalNutrients.PROCNT.quantity);
+//     // testArray.push(response.totalNutrients.CHOCDF.quantity);
+//     // testArray.push(response.totalNutrients.FAT.quantity);
+//     dataFrom2ndResponse += `
+//       <p class="card-text">${response.calories}</p>
+//       <p class="card-text">${response.totalNutrients.PROCNT.quantity.toFixed(0)}</p>
+//       <p class="card-text">${response.totalNutrients.CHOCDF.quantity.toFixed(0)}</p>
+//       <p class="card-text">${response.totalNutrients.FAT.quantity.toFixed(0)}</p>
+//      `;
+
+//     // test += `<div class="card my-3 mx-2">${response.calories}<div>`;
+//     // calories += response.totalNutrients.ENERC_KCAL;
+//     // proteins += response.totalNutrients.PROCNT;
+//     // carbs += response.totalNutrients.CHOCDF;
+//     // fat += response.totalNutrients.FAT;
+//     // ,
+//     // console.log(carbs, fat);
+//     // console.log(calories, proteins, carbs, fat);
+//     $(".card").append(dataFrom2ndResponse);
+//   });
+// }
+// ajax();
+// How to get response onto cards from 2nd api
+// DOM manipulation
+// }
