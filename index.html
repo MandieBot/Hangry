@@ -24,17 +24,23 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
-    <!-- Header Section -->
-    <header class="sticky-top">
-      <!-- Navigation bar -->
-      <!-- Used bootstrap class for Nav bar layout -->
-      <nav class="navbar d-flex justify-content-between w-100">
-        <!-- Added home page link to the logo image. Also added formatting to the logo in css -->
-        <a href="./index.html" ><img src="./assets/images/finalLogo copy.png" alt="hamburger" id="website-logo" class="website-logo " /></a>  
-         <h2  class="fs-1 fw-bold custom-heading">HANGRY<small class="text-muted fst-italic fw-light fs-4 ms-4">For when you have food swings</small></h2>
-        <button id="hangry-button">Feed Me Recipes!</button>
-        </nav>
+    
+    <header>
+      <nav class="navbar navbar-expand-lg custom-nav-bg">
+      <div class="container-fluid">
+        <div class="row w-100 gy-1">
+          <div class="col-2 col-md-2 d-flex justify-content-center my-auto " style="height: 3rem">
+             <a href="./index.html" ><img  src="./assets/images/finalLogo copy.png" alt="hamburger" id="website-logo" class="website-logo " /></a>  
+          </div>
+          <div class="col-10 col-md-8 d-flex justify-content-center align-items-center p-0">
+            <h1 class="slogan m-0 h-100 fw-bold custom-fs d-flex justify-content-center align-items-center">HANGRY<small class="text-muted fst-italic fw-light ms-3 custom-fs-sm">For when you have food swings</small></h1>
+          </div>
+          <div class="col-12 col-md-2 d-flex justify-content-center mt-3"><button id="hangry-button">Feed me recipes!</button></div>
+        </div>
+      </div>
+    </nav>
     </header>
+
     <!-- Carousel section -->
     <section class="carousel-section">
       <!-- We need to change this id to our own id -->
@@ -100,7 +106,7 @@
           </div>
         </div>
         <!-- Search Box -->
-        <div class="search-bar custom-input-bg rounded-4 w-50 p-4 || d-flex align-items-center || custom-input">
+        <div class="search-bar custom-input-bg rounded-4 w-50 p-4 || d-flex align-items-center || custom-input"> 
         <div class="input-group" style="max-height: 3.5rem">
           <input
           id="userSearchInput"
@@ -113,6 +119,11 @@
           <span class="input-group-text custom-btn-bg" id="basic-addon2"
             ><button class="btn" id="search-button"><i class="bi bi-search icon-white"></i></button
           ></span>
+        </div>
+        </div>
+        <!-- Recent Searches -->
+         <div class="recent-searches" id="recentSearches">
+
         </div>
     </section>
     <!-- Main section -->
@@ -187,7 +198,7 @@
           </aside>
           </div>
           <!-- Cards container -->
-          <div id="card-container" class="col-lg-10 bg-white d-flex flex-wrap justify-content-center align-content-center " style="min-height: 50rem">
+          <div id="card-container" class="col-lg-10 bg-white d-flex flex-wrap justify-content-center align-content-center card-container " style="min-height: 50rem">
            
           </div>
         </div>
@@ -195,7 +206,7 @@
     </main>
     <!-- Footer section -->
     <!-- Added background color to footer -->
-    <footer class="custom-footer-bg">
+    <!-- <footer class="custom-footer-bg">
       <div class="container-fluid">
         <div class="row py-4 w-75 mx-auto">
           <div class="col-6 col-md-4 col-lg-4 my-auto">
@@ -221,6 +232,35 @@
           </div>
         </div>
       </div>
+    </footer> -->
+    <footer class="custom-footer-bg">
+      <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <div class="row w-100 gy-1">
+          <div class="col-12 col-md-2 d-flex justify-content-center my-5" style="height: 3rem">
+            <a href="#website-logo"> <img src="./assets/images/finalLogo copy.png" alt="hamburger" class="website-logo" /></a>
+          </div>
+          <div class="col-12 col-md-8   align-self-center text-center mb-3 ">
+            <h4 class="text-light">API Links</h4>
+            <ul class="ul-formatting">
+              <a href="https://developer.edamam.com/edamam-docs-recipe-api
+" target="_blank" class="text-light text-decoration-none"> <li>Recipe Search API Link</li></a>
+              <a href="https://developer.edamam.com/edamam-docs-nutrition-api#/
+" target="_blank" class="text-light text-decoration-none"> <li>Nutrition Analysis API Link</li></a>
+            </ul>
+          </div>
+          <div class="col-12 col-md-2  justify-content-center align-self-center text-center my-3">
+            <h4 class="text-light">Contributors</h4>
+            <ul class="ul-formatting">
+              <a href="https://github.com/T3mpz" target="_blank" class="text-light text-decoration-none"> <li>Christian Bega</li></a>
+              <a href="https://github.com/edyta0106" target="_blank" class="text-light text-decoration-none"> <li>Edyta Radomska</li></a>
+              <a href="https://github.com/MandieBot" target="_blank" class="text-light text-decoration-none"> <li>Mandie Botinelly</li></a>
+              <a href="https://github.com/mo-aden" target="_blank" class="text-light text-decoration-none"> <li>Mohamed Aden</li></a>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
     </footer>
     <!-- Bootstrap script tag -->
     <script
