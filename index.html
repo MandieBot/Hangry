@@ -25,16 +25,30 @@
   </head>
   <body>
     <!-- Header Section -->
-    <header class="sticky-top">
+    <!-- <header class="sticky-top">
+    </header> -->
+
       <!-- Navigation bar -->
       <!-- Used bootstrap class for Nav bar layout -->
-      <nav class="navbar d-flex justify-content-between w-100">
-        <!-- Added home page link to the logo image. Also added formatting to the logo in css -->
-        <a href="./index.html" ><img src="./assets/images/finalLogo copy.png" alt="hamburger" id="website-logo" class="website-logo " /></a>  
+      <!-- <nav class="navbar d-flex justify-content-between w-100">
+       
          <h2  class="fs-1 fw-bold custom-heading">HANGRY<small class="text-muted fst-italic fw-light fs-4 ms-4">For when you have food swings</small></h2>
         <button id="hangry-button">Feed Me Recipes!</button>
-        </nav>
-    </header>
+        </nav> -->
+    <nav class="navbar navbar-expand-lg custom-nav-bg">
+      <div class="container-fluid">
+        <div class="row w-100 gy-1">
+          <div class="col-2 col-md-2 d-flex justify-content-center my-auto " style="height: 3rem">
+             <a href="./index.html" ><img  src="./assets/images/finalLogo copy.png" alt="hamburger" id="website-logo" class="website-logo " /></a>  
+          </div>
+          <div class="col-10 col-md-8 d-flex justify-content-center align-items-center p-0">
+            <h1 class="slogan m-0 h-100 fw-bold custom-fs d-flex justify-content-center align-items-center">HANGRY<small class="text-muted fst-italic fw-light ms-3 custom-fs-sm">For when you have food swings</small></h1>
+          </div>
+          <div class="col-12 col-md-2 d-flex justify-content-center mt-3"><button id="hangry-button">Feed me recipes!</button></div>
+        </div>
+      </div>
+    </nav>
+
     <!-- Carousel section -->
     <section class="carousel-section">
       <!-- We need to change this id to our own id -->
