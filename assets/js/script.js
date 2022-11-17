@@ -24,16 +24,6 @@ $("#search-button").on("click", function () {
   concatUrl(searchParameter);
 });
 
-// Created a function to renderButtons
-// const previousSearches = JSON.parse(localStorage.getItem("previousSearches")) || [];
-// function renderSearchButtons(newSearch) {
-//   // previousSearches.push(newSearch);
-//   // const newButtonEl = document.createElement("button");
-//   // newButtonEl.classList.add("btn", "px-5", "bg-danger", "text-light", "w-100", "my-2");
-//   // newButtonEl.textContent = newBtn;
-//   $("#recentSearches").append(newButtonEl);
-// }
-
 // Created an event listener to listen for click events on random Recipe
 $("#hangry-button").on("click", function () {
   const randomRecipeArr = ["pasta", "cheese", "sushi", "chicken", "eggs", "hamburger"];
@@ -47,9 +37,6 @@ $("#hangry-button").on("click", function () {
     concatUrl(randomRecipeArr[i]);
   }
 });
-
-// // Created a localStorage function that will store user searches
-// function localStorageSet() {}
 
 // Created a selectedCriteria function that will be responsible for collecting the selected user criteria
 function selectedCriteria() {
@@ -76,8 +63,6 @@ function concatUrl(query, healthLabels, dietLabels) {
   // Created two variables to store the apiID and apiKey
   var apiID = "8b44c5a3";
   var apiKey = "5aa1bbf6b8a35fe5f1a87ae1f373c84d";
-  // var nutrientsApiID = "81660670";
-  // var nutrientsApiKey = "bf3c626930152d5249b50c2db0532e9b";
 
   // Create the concatUrl code to concatenate all passed parameters
   // Reassigned the newBaseUrl variable to store the value of the newly created newBaseUrl
