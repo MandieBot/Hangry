@@ -52,7 +52,12 @@ body {
   height: 40rem;
   filter: brightness(30%);
 }
-
+.recent-searches {
+  position: absolute;
+  top: 0;
+  right: 50%;
+  z-index: 1000;
+}
 .custom-input {
   position: absolute;
   top: 50%;
@@ -107,7 +112,7 @@ body {
   -webkit-box-shadow: -2px 0px 15px 0px rgba(0, 0, 0, 0.3);
   box-shadow: -2px 0px 15px 0px rgba(0, 0, 0, 0.3);
   width: 17rem;
-  height: 25rem;
+  height: 28rem;
 }
 
 .card:hover {
@@ -120,7 +125,7 @@ body {
 }
 
 .custom-footer-bg {
-  background-color: #a3a2a2;
+  background-color: #a5a3a3;
 }
 .custom-nav-bg {
   background: rgb(247, 239, 224);
@@ -156,4 +161,31 @@ body {
 }
 .card-text {
   text-transform: capitalize;
+}
+
+/* Card Flip */
+
+.card {
+  /* position: absolute; */
+  transform-style: preserve-3d;
+  transition: all 0.4s ease;
+}
+.card:hover {
+  transform: rotateY(180deg);
+}
+.card-front {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  color: black;
+}
+.card-back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  text-decoration: none;
+  color: black;
 }
